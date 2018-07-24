@@ -1,0 +1,451 @@
+package Formulario;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.awt.event.KeyListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.text.DateFormat;
+import java.text.MessageFormat;
+import java.text.SimpleDateFormat;
+
+import javax.swing.DefaultComboBoxModel;
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JComboBox;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.RowFilter;
+import javax.swing.UIManager;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
+import javax.swing.table.TableRowSorter;
+
+import com.toedter.calendar.JCalendar;
+
+import Array.ArrayCliente;
+import Array.arraydetalle;
+import Array.añadirArrayBebida;
+import Array.añadirArraypiqueo;
+import Clases.claseCliente;
+import Clases.clasedetalle;
+
+public class consumopagos extends JFrame  implements ActionListener, MouseListener, KeyListener{
+
+	private JPanel contentPane;
+	private JLabel labelUsuario;
+	private JButton btnmini;
+	private JButton btncuadri;
+	private JButton btnX;
+	private JLabel label;
+	private JTextField txtcuadro;
+	private JLabel label_1;
+	private JLabel label_2;
+	private JButton btnAcon;
+	private JLabel lb;
+	private JLabel label_3;
+	private JLabel lblUsuarios;
+	private JLabel label_4;
+	private DefaultTableModel modelo;
+	private JPanel panelfondo;
+	private int p,b;
+	
+	private DefaultTableModel modelo1;
+	private DefaultTableModel modelo2;
+	TableRowSorter trs1;
+	TableRowSorter trs2;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		
+		
+		try {
+
+			
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					consumopagos frame = new consumopagos();
+					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public consumopagos() {
+		setUndecorated(true);
+		final int ANCHO = 1000,
+		          ALTO = 650,
+		          DX = 8,
+		          DY = 53;
+		
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds((getToolkit().getScreenSize().width - ANCHO - DX) / 2,
+				  (getToolkit().getScreenSize().height - ALTO - DY) / 2,
+				   1019, 737);
+
+
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+			ImageIcon fondo1=new ImageIcon(getClass().getResource("/img/imprimir.png"));
+			ImageIcon fondo2=new ImageIcon(getClass().getResource("/img/imprimir2.png"));
+		ImageIcon fondo10=new ImageIcon(getClass().getResource("/img/paginaWeb.png"));
+		
+		panelfondo = new JPanel();
+		panelfondo.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		panelfondo.setBackground(SystemColor.control);
+		panelfondo.setBounds(10, 118, 1002, 592);
+		contentPane.add(panelfondo);
+		panelfondo.setLayout(null);
+		
+		txtBusqueda = new JTextField();
+		txtBusqueda.addKeyListener(this);
+		
+		btnFiltrarConsumos = new JButton("Filtrar Consumos");
+		btnFiltrarConsumos.addActionListener(this);
+		btnFiltrarConsumos.setFont(new Font("Times New Roman", Font.BOLD, 14));
+		btnFiltrarConsumos.setBounds(63, 11, 140, 20);
+		panelfondo.add(btnFiltrarConsumos);
+		txtBusqueda.setBorder(new LineBorder(new Color(171, 173, 179), 0));
+		txtBusqueda.setBounds(300, 9, 130, 20);
+		panelfondo.add(txtBusqueda);
+		txtBusqueda.setColumns(10);
+		
+		lblBusqueda = new JLabel("Busqueda");
+		lblBusqueda.setForeground(Color.WHITE);
+		lblBusqueda.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblBusqueda.setBounds(214, 11, 76, 14);
+		panelfondo.add(lblBusqueda);
+		
+		label_18 = new JLabel("");
+		label_18.setIcon(new ImageIcon(Detalleconsumo.class.getResource("/img/cv.png")));
+		label_18.setBounds(0, 6, 555, 33);
+		panelfondo.add(label_18);
+		
+		lblDetallePiqueo = new JLabel("Detalle Piqueo");
+		lblDetallePiqueo.setForeground(Color.WHITE);
+		lblDetallePiqueo.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblDetallePiqueo.setBounds(308, 6, 152, 14);
+		panelfondo.add(lblDetallePiqueo);
+		
+		lblDetalleBebida = new JLabel("Detalle Bebida");
+		lblDetalleBebida.setForeground(Color.WHITE);
+		lblDetalleBebida.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblDetalleBebida.setBounds(32, 5, 152, 14);
+		panelfondo.add(lblDetalleBebida);
+		
+		label_4 = new JLabel("\u00C1COMM Karaoke");
+		label_4.setForeground(new Color(165, 42, 42));
+		label_4.setFont(new Font("Tahoma", Font.BOLD, 12));
+		label_4.setBounds(873, 49, 108, 14);
+		contentPane.add(label_4);
+		
+		lblUsuarios = new JLabel("Detalle Pago");
+		lblUsuarios.setForeground(Color.WHITE);
+		lblUsuarios.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		lblUsuarios.setBounds(56, 86, 152, 14);
+		contentPane.add(lblUsuarios);
+		
+		label_3 = new JLabel("");
+		label_3.setIcon(new ImageIcon(Cancion.class.getResource("/img/canc.png")));
+		label_3.setBounds(20, 74, 38, 45);
+		contentPane.add(label_3);
+		
+		lb = new JLabel("");
+		lb.setBounds(9, 74, 1002, 45);
+		contentPane.add(lb);
+		ImageIcon fondo3=new ImageIcon(getClass().getResource("/img/cv.png"));
+		ImageIcon icon3=new ImageIcon(fondo3.getImage().getScaledInstance(lb.getWidth(), lb.getHeight(),Image.SCALE_DEFAULT));
+		lb.setIcon(icon3);
+		
+		label_2 = new JLabel("\u00C1COMM Karaoke");
+		label_2.setForeground(Color.WHITE);
+		label_2.setFont(new Font("Tahoma", Font.BOLD, 12));
+		label_2.setBounds(68, 7, 140, 14);
+		contentPane.add(label_2);
+		
+		btnAcon = new JButton("");
+		btnAcon.addActionListener(this);
+		btnAcon.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnAcon.setRolloverIcon(new ImageIcon(Usuario.class.getResource("/img/princi2.png")));
+		btnAcon.setIcon(new ImageIcon(Usuario.class.getResource("/img/logo.png")));
+		btnAcon.setFocusable(false);
+		btnAcon.setFocusTraversalKeysEnabled(false);
+		btnAcon.setFocusPainted(false);
+		btnAcon.setContentAreaFilled(false);
+		btnAcon.setBorderPainted(false);
+		btnAcon.setBounds(10, -4, 48, 56);
+		contentPane.add(btnAcon);
+		
+		label_1 = new JLabel("-");
+		label_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		label_1.setForeground(Color.WHITE);
+		label_1.setFont(new Font("Tahoma", Font.BOLD, 19));
+		label_1.setBounds(928, 2, 11, 14);
+		contentPane.add(label_1);
+		
+		txtcuadro = new JTextField();
+		txtcuadro.setFont(new Font("Tahoma", Font.PLAIN, 10));
+		txtcuadro.setEditable(false);
+		txtcuadro.setColumns(10);
+		txtcuadro.setBorder(new LineBorder(new Color(255, 255, 255), 2));
+		txtcuadro.setBackground(new Color(70, 130, 180));
+		txtcuadro.setBounds(963, 5, 10, 10);
+		contentPane.add(txtcuadro);
+		
+		label = new JLabel("x");
+		label.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		label.setForeground(Color.WHITE);
+		label.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label.setBounds(998, -1, 11, 14);
+		contentPane.add(label);
+		
+		btncuadri = new JButton("");
+		btncuadri.setRolloverIcon(new ImageIcon(Usuario.class.getResource("/img/transs.png")));
+		btncuadri.setIcon(new ImageIcon(Usuario.class.getResource("/img/btnx.png")));
+		btncuadri.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btncuadri.setForeground(Color.WHITE);
+		btncuadri.setFocusable(false);
+		btncuadri.setFocusTraversalKeysEnabled(false);
+		btncuadri.setFocusPainted(false);
+		btncuadri.setContentAreaFilled(false);
+		btncuadri.setBorderPainted(false);
+		btncuadri.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		btncuadri.setBackground(Color.WHITE);
+		btncuadri.setBounds(951, -4, 37, 28);
+		contentPane.add(btncuadri);
+		
+		btnmini = new JButton("");
+		btnmini.setRolloverIcon(new ImageIcon(Usuario.class.getResource("/img/transs.png")));
+		btnmini.setIcon(new ImageIcon(Usuario.class.getResource("/img/btnx.png")));
+		btnmini.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnmini.setForeground(Color.WHITE);
+		btnmini.setFocusable(false);
+		btnmini.setFocusTraversalKeysEnabled(false);
+		btnmini.setFocusPainted(false);
+		btnmini.setContentAreaFilled(false);
+		btnmini.setBorderPainted(false);
+		btnmini.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		btnmini.setBackground(Color.WHITE);
+		btnmini.setBounds(918, -4, 37, 28);
+		contentPane.add(btnmini);
+		
+		btnX = new JButton("");
+		btnX.addActionListener(this);
+		btnX.setRolloverIcon(new ImageIcon(Usuario.class.getResource("/img/transs.png")));
+		btnX.setIcon(new ImageIcon(Usuario.class.getResource("/img/btnx.png")));
+		btnX.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnX.setForeground(Color.WHITE);
+		btnX.setFocusable(false);
+		btnX.setFocusTraversalKeysEnabled(false);
+		btnX.setFocusPainted(false);
+		btnX.setContentAreaFilled(false);
+		btnX.setBorderPainted(false);
+		btnX.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		btnX.setBackground(Color.WHITE);
+		btnX.setBounds(984, -4, 37, 28);
+		contentPane.add(btnX);
+		
+		labelUsuario = new JLabel("");
+		labelUsuario.setBounds(0, 0, 1019, 737);
+		contentPane.add(labelUsuario);
+		ImageIcon fondo20=new ImageIcon(getClass().getResource("/img/princi.png"));
+		ImageIcon icon20=new ImageIcon(fondo20.getImage().getScaledInstance(labelUsuario.getWidth(), labelUsuario.getHeight(),Image.SCALE_DEFAULT));
+		labelUsuario.setIcon(icon20);
+		
+		scrollPane_3 = new JScrollPane();
+		scrollPane_3.setBorder(new LineBorder(Color.WHITE, 3));
+		scrollPane_3.setBounds(0, 40, 555, 552);
+		panelfondo.add(scrollPane_3);
+		
+		tabledetalle = new JTable();
+		tabledetalle.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		scrollPane_3.setViewportView(tabledetalle);
+		
+		
+		blID = new JLabel("");
+		blID.setText(""+ad.generar());
+		blID.setVisible(false);
+		blID.setBounds(773, 50, 46, 14);
+		contentPane.add(blID);
+		
+		modelo=new DefaultTableModel();
+		modelo.addColumn("consumo");
+		modelo.addColumn("cliente");
+		modelo.addColumn("bebida");
+		modelo.addColumn("precioB");
+		modelo.addColumn("piqueo");
+		modelo.addColumn("precioP");
+		modelo.addColumn("fecha");
+		modelo.addColumn("total");
+		modelo.addColumn("estado");
+		tabledetalle.setModel(modelo);
+		
+		btnIm = new JButton("");
+		btnIm.addActionListener(this);
+		btnIm.setIcon(new ImageIcon(consumopagos.class.getResource("/img/imprimir.png")));
+		btnIm.setFocusable(false);
+		btnIm.setFocusTraversalKeysEnabled(false);
+		btnIm.setFocusPainted(false);
+		btnIm.setDefaultCapable(false);
+		btnIm.setContentAreaFilled(false);
+		btnIm.setBorderPainted(false);
+		btnIm.setBounds(697, 8, 165, 62);
+		panelfondo.add(btnIm);
+		
+		
+		//ancho();
+		
+		
+	}
+	public void actionPerformed(ActionEvent arg0) {
+		if (arg0.getSource() == btnFiltrarConsumos) {
+			do_btnFiltrarConsumos_actionPerformed(arg0);
+		}
+		if (arg0.getSource() == btnIm) {
+			do_btnIm_actionPerformed(arg0);
+		}
+		if (arg0.getSource() == btnAcon) {
+			do_btnAcon_actionPerformed(arg0);
+		}
+		if (arg0.getSource() == btnX) {
+			do_btnX_actionPerformed(arg0);
+		}
+	}
+
+	private JLabel blID;
+	private JLabel lblDetalleBebida;
+	private JLabel lblDetallePiqueo;
+	private JTable tabledetalle;
+	private JLabel label_18;
+	private JLabel lblBusqueda;
+	private JTextField txtBusqueda;
+	private JScrollPane scrollPane_3;
+	
+	
+	
+	
+
+	
+	protected void do_btnX_actionPerformed(ActionEvent arg0) {
+		int i=JOptionPane.showConfirmDialog(null,"Desea salir","salir", JOptionPane.YES_OPTION,JOptionPane.QUESTION_MESSAGE);
+		if(i==JOptionPane.YES_OPTION)
+		dispose();
+		else
+			JOptionPane.showMessageDialog(null,"exito");
+	}
+	
+	 arraydetalle ad=new  arraydetalle("detalle.txt");
+	 private JButton btnIm;
+	 private JButton btnFiltrarConsumos;
+	 private void listartabla(){
+			modelo.setRowCount(0);
+			for (int i = 0; i < ad.tamaño(); i++) {
+				
+				Object lista[]={"consu"+ad.obtener(i).getConsumo(),"cli"+ad.obtener(i).getCliente(),"bebi"+ad.obtener(i).getBebida(),
+						ad.obtener(i).getPrecioBe(),"pique"+ad.obtener(i).getPiqueo(),ad.obtener(i).getPrecioPi(),
+						ad.obtener(i).getFecha(),ad.obtener(i).getTotal(),ad.obtener(i).estado()
+				};
+				
+				modelo.addRow(lista);
+			
+			
+			
+			}
+		}
+	public void mouseClicked(MouseEvent arg0) {
+	}
+	public void mouseEntered(MouseEvent arg0) {
+	}
+	
+	
+	public void mousePressed(MouseEvent e) {
+	}
+	public void mouseReleased(MouseEvent e) {
+	}
+	protected void do_btnAcon_actionPerformed(ActionEvent arg0) {
+		
+	
+	}
+	
+	public void mouseExited(MouseEvent arg0) {
+	}
+	public void keyPressed(KeyEvent arg0) {
+	}
+	public void keyReleased(KeyEvent arg0) {
+	}
+	public void keyTyped(KeyEvent arg0) {
+		if (arg0.getSource() == txtBusqueda) {
+			do_txtBusqueda_keyTyped(arg0);
+		}
+	}
+	public void buscar(){
+		txtBusqueda.addKeyListener(new KeyAdapter() {
+			
+			public void keyReleased(KeyEvent ev){
+				trs1.setRowFilter(RowFilter.regexFilter(txtBusqueda.getText(),0));
+					
+			}
+			});
+			trs1=new TableRowSorter(modelo) ;
+			tabledetalle.setRowSorter(trs1);
+		
+		
+
+	}
+
+	protected void do_txtBusqueda_keyTyped(KeyEvent arg0) {
+		buscar();
+		
+		
+	}
+	protected void do_btnIm_actionPerformed(ActionEvent arg0) {
+		MessageFormat header=new MessageFormat("Pagos");
+		MessageFormat footer=new MessageFormat("Consumo Pagos{0,number,integer}");
+		try {
+			tabledetalle.print(JTable.PrintMode.NORMAL, header,footer);
+			
+		} catch (java.awt.print.PrinterException e) {
+			System.err.format("Cannot print %s%n",e.getMessage());
+		}
+	}
+	 
+	protected void do_btnFiltrarConsumos_actionPerformed(ActionEvent arg0) {
+		listartabla();
+		
+	}
+}

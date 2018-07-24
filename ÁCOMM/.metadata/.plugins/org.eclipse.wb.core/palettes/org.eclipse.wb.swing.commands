@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<commands>
+	<moveEntry
+		id="org.eclipse.wb.swing.components javax.swing.JLabel"
+		category="org.eclipse.wb.swing.components"/>
+	<addCategory
+		id="category_1499650983461"
+		name="Custom"
+		description="Container for custom components"
+		visible="true"
+		open="true"/>
+	<addComponent
+		id="custom_1499650983460"
+		name="JCalendar"
+		description="Creates com.toedter.calendar.JCalendar component."
+		visible="true"
+		class="com.toedter.calendar.JCalendar"
+		category="category_1499650983461"/>
+	<addComponent
+		id="custom_1499802892051"
+		name="JCalendar"
+		description="Creates com.toedter.calendar.JCalendar component."
+		visible="true"
+		class="com.toedter.calendar.JCalendar"
+		category="category_1499650983461"/>
+	<addComponent
+		id="custom_1499802942305"
+		name="JDateChooser"
+		description="Creates com.toedter.calendar.JDateChooser component."
+		visible="true"
+		class="com.toedter.calendar.JDateChooser"
+		category="category_1499650983461"/>
+</commands>

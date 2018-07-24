@@ -1,0 +1,1296 @@
+!SESSION 2017-12-09 14:16:55.410 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_151
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=es_PE
+Framework arguments:  -product org.eclipse.epp.package.committers.product
+Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.committers.product
+
+This is a continuation of log file F:\Proyecto\ÁCOMM\.metadata\.bak_2.log
+Created Time: 2017-12-09 16:05:27.045
+
+!ENTRY org.eclipse.ui.monitoring 4 0 2017-12-09 16:05:27.117
+!MESSAGE UI freeze of 3,2s at 16:05:21.500
+!SUBENTRY 1 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.117
+!MESSAGE Sample at 16:05:22.925 (+1,425s)
+Thread 'main' tid=1 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.WinNTFileSystem.getBooleanAttributes(Native Method)
+	at java.io.File.exists(Unknown Source)
+	at java.io.WinNTFileSystem.canonicalize(Unknown Source)
+	at java.io.File.getCanonicalPath(Unknown Source)
+	at java.io.FilePermission$1.run(Unknown Source)
+	at java.io.FilePermission$1.run(Unknown Source)
+	at java.security.AccessController.doPrivileged(Native Method)
+	at java.io.FilePermission.init(Unknown Source)
+	at java.io.FilePermission.<init>(Unknown Source)
+	at java.lang.SecurityManager.checkWrite(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.google.common.io.Files$FileByteSink.openStream(Files.java:245)
+	at com.google.common.io.Files$FileByteSink.openStream(Files.java:233)
+	at com.google.common.io.ByteSink$AsCharSink.openStream(ByteSink.java:158)
+	at com.google.common.io.CharSink.write(CharSink.java:105)
+	at com.google.common.io.Files.write(Files.java:489)
+	at org.eclipse.recommenders.internal.coordinates.rcp.ManualProjectCoordinateAdvisor.close(ManualProjectCoordinateAdvisor.java:100)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.recommenders.internal.rcp.RcpModule$Listener$1.executeMethod(RcpModule.java:293)
+	at org.eclipse.recommenders.internal.rcp.RcpModule$Listener$1.access$0(RcpModule.java:290)
+	at org.eclipse.recommenders.internal.rcp.RcpModule$Listener$1$1.postShutdown(RcpModule.java:309)
+	at org.eclipse.ui.internal.Workbench$8.run(Workbench.java:1011)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:50)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:173)
+	at org.eclipse.ui.internal.Workbench.firePostShutdown(Workbench.java:1008)
+	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:3192)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1201)
+	at org.eclipse.ui.internal.Workbench.access$22(Workbench.java:1113)
+	at org.eclipse.ui.internal.Workbench$19.run(Workbench.java:1454)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1451)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1424)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:1596)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$16(WorkbenchWindow.java:1542)
+	at org.eclipse.ui.internal.WorkbenchWindow$11.run(WorkbenchWindow.java:1628)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1625)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1639)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.close(WorkbenchWindow.java:527)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer$7.shellClosed(WBWRenderer.java:518)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4362)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1113)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1137)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1122)
+	at org.eclipse.swt.widgets.Decorations.closeWidget(Decorations.java:308)
+	at org.eclipse.swt.widgets.Decorations.WM_CLOSE(Decorations.java:1703)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4678)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2544)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:498)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4774)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2544)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:498)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4774)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2549)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3767)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:694)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.117
+!MESSAGE Thread 'Process monitor' tid=2333 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.ProcessImpl.waitForInterruptibly(Native Method)
+	at java.lang.ProcessImpl.waitFor(Unknown Source)
+	at org.eclipse.debug.core.model.RuntimeProcess$ProcessMonitorThread.run(RuntimeProcess.java:428)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.117
+!MESSAGE Thread 'Input Stream Monitor' tid=2332 (WAITING)
+Waiting for: java.lang.Object@7d02187c
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.writeNext(InputStreamMonitor.java:156)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.write(InputStreamMonitor.java:125)
+	at org.eclipse.debug.internal.core.InputStreamMonitor$1.run(InputStreamMonitor.java:100)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.117
+!MESSAGE Thread 'Output Stream Monitor' tid=2331 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.117
+!MESSAGE Thread 'Output Stream Monitor' tid=2330 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.117
+!MESSAGE Thread 'Process monitor' tid=2321 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.ProcessImpl.waitForInterruptibly(Native Method)
+	at java.lang.ProcessImpl.waitFor(Unknown Source)
+	at org.eclipse.debug.core.model.RuntimeProcess$ProcessMonitorThread.run(RuntimeProcess.java:428)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.117
+!MESSAGE Thread 'Input Stream Monitor' tid=2320 (WAITING)
+Waiting for: java.lang.Object@2f92addc
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.writeNext(InputStreamMonitor.java:156)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.write(InputStreamMonitor.java:125)
+	at org.eclipse.debug.internal.core.InputStreamMonitor$1.run(InputStreamMonitor.java:100)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.118
+!MESSAGE Thread 'Output Stream Monitor' tid=2319 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.118
+!MESSAGE Thread 'Output Stream Monitor' tid=2318 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.118
+!MESSAGE Thread 'Worker-37' tid=2224 (WAITING)
+Waiting for: org.eclipse.ui.console.IOConsoleInputStream@2660efc8
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.ui.console.IOConsoleInputStream.waitForData(IOConsoleInputStream.java:150)
+	at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:93)
+	at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:119)
+	at org.eclipse.debug.internal.ui.views.console.ProcessConsole$InputReadJob.run(ProcessConsole.java:733)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.118
+!MESSAGE Thread 'Process monitor' tid=2159 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.ProcessImpl.waitForInterruptibly(Native Method)
+	at java.lang.ProcessImpl.waitFor(Unknown Source)
+	at org.eclipse.debug.core.model.RuntimeProcess$ProcessMonitorThread.run(RuntimeProcess.java:428)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.118
+!MESSAGE Thread 'Input Stream Monitor' tid=2158 (WAITING)
+Waiting for: java.lang.Object@0f7595a8
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.writeNext(InputStreamMonitor.java:156)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.write(InputStreamMonitor.java:125)
+	at org.eclipse.debug.internal.core.InputStreamMonitor$1.run(InputStreamMonitor.java:100)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.118
+!MESSAGE Thread 'Output Stream Monitor' tid=2157 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.118
+!MESSAGE Thread 'Output Stream Monitor' tid=2156 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.118
+!MESSAGE Thread 'Worker-36' tid=2109 (WAITING)
+Waiting for: org.eclipse.ui.console.IOConsoleInputStream@38fffb27
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.ui.console.IOConsoleInputStream.waitForData(IOConsoleInputStream.java:150)
+	at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:93)
+	at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:119)
+	at org.eclipse.debug.internal.ui.views.console.ProcessConsole$InputReadJob.run(ProcessConsole.java:733)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.151
+!MESSAGE Thread 'Worker-33' tid=1859 (WAITING)
+Waiting for: org.eclipse.ui.console.IOConsoleInputStream@1342c4dc
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.ui.console.IOConsoleInputStream.waitForData(IOConsoleInputStream.java:150)
+	at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:93)
+	at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:119)
+	at org.eclipse.debug.internal.ui.views.console.ProcessConsole$InputReadJob.run(ProcessConsole.java:733)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'com.google.inject.internal.util.$Finalizer' tid=269 (WAITING)
+Waiting for: java.lang.ref.ReferenceQueue$Lock@03de1f3a
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at com.google.inject.internal.util.$Finalizer.run(Finalizer.java:114)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'TimerQueue' tid=114 (WAITING)
+Waiting for: java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@638337e0
+Holding: java.util.concurrent.locks.ReentrantLock$NonfairSync@6bdd2299
+!STACK 0
+java.lang.Exception: Stack Trace
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.park(Unknown Source)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+	at java.util.concurrent.DelayQueue.take(Unknown Source)
+	at javax.swing.TimerQueue.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'Thread-8' tid=41 (TIMED_WAITING)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Thread.sleep(Native Method)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:68)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'EventAdmin Async Event Dispatcher Thread' tid=29 (WAITING)
+Waiting for: org.eclipse.swt.widgets.RunnableLock@2910bb24
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:199)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:145)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4761)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application$1.syncExec(E4Application.java:211)
+	at org.eclipse.e4.ui.internal.di.UIEventObjectSupplier$UIEventHandler.handleEvent(UIEventObjectSupplier.java:53)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'Java indexing' tid=27 (WAITING)
+Waiting for: org.eclipse.jdt.internal.core.search.indexing.IndexManager@3ba8aa44
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.run(JobManager.java:382)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'EMF Reference Cleaner' tid=21 (WAITING)
+Waiting for: java.lang.ref.ReferenceQueue$Lock@35d6e09e
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at org.eclipse.emf.common.util.CommonUtil$1ReferenceClearingQueuePollingThread.run(CommonUtil.java:70)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'Worker-JM' tid=17 (WAITING)
+Waiting for: java.util.ArrayList@2fc2f73f
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at org.eclipse.core.internal.jobs.InternalWorker.run(InternalWorker.java:59)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'EclipseProjectCoordinateAdvisorService STOPPING' tid=2465 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileOutputStream.writeBytes(Native Method)
+	at java.io.FileOutputStream.write(Unknown Source)
+	at sun.nio.cs.StreamEncoder.writeBytes(Unknown Source)
+	at sun.nio.cs.StreamEncoder.implFlushBuffer(Unknown Source)
+	at sun.nio.cs.StreamEncoder.implFlush(Unknown Source)
+	at sun.nio.cs.StreamEncoder.flush(Unknown Source)
+	at java.io.OutputStreamWriter.flush(Unknown Source)
+	at com.google.common.io.CharSink.write(CharSink.java:107)
+	at com.google.common.io.Files.write(Files.java:489)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.shutDown(EclipseProjectCoordinateAdvisorService.java:220)
+	at com.google.common.util.concurrent.AbstractIdleService$2$2.run(AbstractIdleService.java:69)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 1 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Sample at 16:05:23.607 (+0,682s)
+Thread 'main' tid=1 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileOutputStream.open0(Native Method)
+	at java.io.FileOutputStream.open(Unknown Source)
+	at java.io.FileOutputStream.<init>(Unknown Source)
+	at com.google.common.io.Files$FileByteSink.openStream(Files.java:245)
+	at com.google.common.io.Files$FileByteSink.openStream(Files.java:233)
+	at com.google.common.io.ByteSink$AsCharSink.openStream(ByteSink.java:158)
+	at com.google.common.io.CharSink.write(CharSink.java:105)
+	at com.google.common.io.Files.write(Files.java:489)
+	at org.eclipse.recommenders.internal.coordinates.rcp.ManualProjectCoordinateAdvisor.close(ManualProjectCoordinateAdvisor.java:100)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.recommenders.internal.rcp.RcpModule$Listener$1.executeMethod(RcpModule.java:293)
+	at org.eclipse.recommenders.internal.rcp.RcpModule$Listener$1.access$0(RcpModule.java:290)
+	at org.eclipse.recommenders.internal.rcp.RcpModule$Listener$1$1.postShutdown(RcpModule.java:309)
+	at org.eclipse.ui.internal.Workbench$8.run(Workbench.java:1011)
+	at org.eclipse.core.runtime.SafeRunner.run(SafeRunner.java:42)
+	at org.eclipse.ui.internal.JFaceUtil$1.run(JFaceUtil.java:50)
+	at org.eclipse.jface.util.SafeRunnable.run(SafeRunnable.java:173)
+	at org.eclipse.ui.internal.Workbench.firePostShutdown(Workbench.java:1008)
+	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:3192)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1201)
+	at org.eclipse.ui.internal.Workbench.access$22(Workbench.java:1113)
+	at org.eclipse.ui.internal.Workbench$19.run(Workbench.java:1454)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1451)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1424)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:1596)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$16(WorkbenchWindow.java:1542)
+	at org.eclipse.ui.internal.WorkbenchWindow$11.run(WorkbenchWindow.java:1628)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1625)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1639)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.close(WorkbenchWindow.java:527)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer$7.shellClosed(WBWRenderer.java:518)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4362)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1113)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1137)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1122)
+	at org.eclipse.swt.widgets.Decorations.closeWidget(Decorations.java:308)
+	at org.eclipse.swt.widgets.Decorations.WM_CLOSE(Decorations.java:1703)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4678)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2544)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:498)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4774)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2544)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:498)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4774)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2549)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3767)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:694)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'Process monitor' tid=2333 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.ProcessImpl.waitForInterruptibly(Native Method)
+	at java.lang.ProcessImpl.waitFor(Unknown Source)
+	at org.eclipse.debug.core.model.RuntimeProcess$ProcessMonitorThread.run(RuntimeProcess.java:428)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'Input Stream Monitor' tid=2332 (WAITING)
+Waiting for: java.lang.Object@7d02187c
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.writeNext(InputStreamMonitor.java:156)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.write(InputStreamMonitor.java:125)
+	at org.eclipse.debug.internal.core.InputStreamMonitor$1.run(InputStreamMonitor.java:100)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'Output Stream Monitor' tid=2331 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'Output Stream Monitor' tid=2330 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'Process monitor' tid=2321 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.ProcessImpl.waitForInterruptibly(Native Method)
+	at java.lang.ProcessImpl.waitFor(Unknown Source)
+	at org.eclipse.debug.core.model.RuntimeProcess$ProcessMonitorThread.run(RuntimeProcess.java:428)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'Input Stream Monitor' tid=2320 (WAITING)
+Waiting for: java.lang.Object@2f92addc
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.writeNext(InputStreamMonitor.java:156)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.write(InputStreamMonitor.java:125)
+	at org.eclipse.debug.internal.core.InputStreamMonitor$1.run(InputStreamMonitor.java:100)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'Output Stream Monitor' tid=2319 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'Output Stream Monitor' tid=2318 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'Worker-37' tid=2224 (WAITING)
+Waiting for: org.eclipse.ui.console.IOConsoleInputStream@2660efc8
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.ui.console.IOConsoleInputStream.waitForData(IOConsoleInputStream.java:150)
+	at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:93)
+	at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:119)
+	at org.eclipse.debug.internal.ui.views.console.ProcessConsole$InputReadJob.run(ProcessConsole.java:733)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'Process monitor' tid=2159 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.ProcessImpl.waitForInterruptibly(Native Method)
+	at java.lang.ProcessImpl.waitFor(Unknown Source)
+	at org.eclipse.debug.core.model.RuntimeProcess$ProcessMonitorThread.run(RuntimeProcess.java:428)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'Input Stream Monitor' tid=2158 (WAITING)
+Waiting for: java.lang.Object@0f7595a8
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.writeNext(InputStreamMonitor.java:156)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.write(InputStreamMonitor.java:125)
+	at org.eclipse.debug.internal.core.InputStreamMonitor$1.run(InputStreamMonitor.java:100)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'Output Stream Monitor' tid=2157 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'Output Stream Monitor' tid=2156 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.152
+!MESSAGE Thread 'Worker-36' tid=2109 (WAITING)
+Waiting for: org.eclipse.ui.console.IOConsoleInputStream@38fffb27
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.ui.console.IOConsoleInputStream.waitForData(IOConsoleInputStream.java:150)
+	at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:93)
+	at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:119)
+	at org.eclipse.debug.internal.ui.views.console.ProcessConsole$InputReadJob.run(ProcessConsole.java:733)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Worker-33' tid=1859 (WAITING)
+Waiting for: org.eclipse.ui.console.IOConsoleInputStream@1342c4dc
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.ui.console.IOConsoleInputStream.waitForData(IOConsoleInputStream.java:150)
+	at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:93)
+	at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:119)
+	at org.eclipse.debug.internal.ui.views.console.ProcessConsole$InputReadJob.run(ProcessConsole.java:733)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'com.google.inject.internal.util.$Finalizer' tid=269 (WAITING)
+Waiting for: java.lang.ref.ReferenceQueue$Lock@03de1f3a
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at com.google.inject.internal.util.$Finalizer.run(Finalizer.java:114)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'TimerQueue' tid=114 (WAITING)
+Waiting for: java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@638337e0
+Holding: java.util.concurrent.locks.ReentrantLock$NonfairSync@6bdd2299
+!STACK 0
+java.lang.Exception: Stack Trace
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.park(Unknown Source)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+	at java.util.concurrent.DelayQueue.take(Unknown Source)
+	at javax.swing.TimerQueue.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Thread-8' tid=41 (TIMED_WAITING)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Thread.sleep(Native Method)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:68)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'EventAdmin Async Event Dispatcher Thread' tid=29 (WAITING)
+Waiting for: org.eclipse.swt.widgets.RunnableLock@2910bb24
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:199)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:145)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4761)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application$1.syncExec(E4Application.java:211)
+	at org.eclipse.e4.ui.internal.di.UIEventObjectSupplier$UIEventHandler.handleEvent(UIEventObjectSupplier.java:53)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Java indexing' tid=27 (WAITING)
+Waiting for: org.eclipse.jdt.internal.core.search.indexing.IndexManager@3ba8aa44
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.run(JobManager.java:382)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'EMF Reference Cleaner' tid=21 (WAITING)
+Waiting for: java.lang.ref.ReferenceQueue$Lock@35d6e09e
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at org.eclipse.emf.common.util.CommonUtil$1ReferenceClearingQueuePollingThread.run(CommonUtil.java:70)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Worker-JM' tid=17 (WAITING)
+Waiting for: java.util.ArrayList@2fc2f73f
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at org.eclipse.core.internal.jobs.InternalWorker.run(InternalWorker.java:59)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'EclipseProjectCoordinateAdvisorService STOPPING' tid=2465 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileOutputStream.close0(Native Method)
+	at java.io.FileOutputStream.access$000(Unknown Source)
+	at java.io.FileOutputStream$1.close(Unknown Source)
+	at java.io.FileDescriptor.closeAll(Unknown Source)
+	at java.io.FileOutputStream.close(Unknown Source)
+	at sun.nio.cs.StreamEncoder.implClose(Unknown Source)
+	at sun.nio.cs.StreamEncoder.close(Unknown Source)
+	at java.io.OutputStreamWriter.close(Unknown Source)
+	at com.google.common.io.Closer.close(Closer.java:214)
+	at com.google.common.io.CharSink.write(CharSink.java:111)
+	at com.google.common.io.Files.write(Files.java:489)
+	at org.eclipse.recommenders.coordinates.rcp.EclipseProjectCoordinateAdvisorService.shutDown(EclipseProjectCoordinateAdvisorService.java:220)
+	at com.google.common.util.concurrent.AbstractIdleService$2$2.run(AbstractIdleService.java:69)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 1 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Sample at 16:05:24.263 (+0,656s)
+Thread 'main' tid=1 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.WinNTFileSystem.delete0(Native Method)
+	at java.io.WinNTFileSystem.delete(Unknown Source)
+	at java.io.File.delete(Unknown Source)
+	at org.eclipse.core.internal.preferences.SafeFileOutputStream.commit(SafeFileOutputStream.java:70)
+	at org.eclipse.core.internal.preferences.SafeFileOutputStream.close(SafeFileOutputStream.java:64)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.write(EclipsePreferences.java:327)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.save(EclipsePreferences.java:1135)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.save(EclipsePreferences.java:1111)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.internalFlush(EclipsePreferences.java:471)
+	at org.eclipse.core.internal.preferences.EclipsePreferences.flush(EclipsePreferences.java:429)
+	at org.eclipse.core.internal.preferences.legacy.PreferenceForwarder.flush(PreferenceForwarder.java:832)
+	at org.eclipse.core.runtime.Plugin$2.run(Plugin.java:419)
+	at org.eclipse.core.runtime.Plugin.savePluginPreferences(Plugin.java:426)
+	at org.eclipse.ui.internal.ActivityPersistanceHelper.saveEnabledStates(ActivityPersistanceHelper.java:277)
+	at org.eclipse.ui.internal.ActivityPersistanceHelper.shutdown(ActivityPersistanceHelper.java:289)
+	at org.eclipse.ui.internal.Workbench.shutdown(Workbench.java:3222)
+	at org.eclipse.ui.internal.Workbench.busyClose(Workbench.java:1201)
+	at org.eclipse.ui.internal.Workbench.access$22(Workbench.java:1113)
+	at org.eclipse.ui.internal.Workbench$19.run(Workbench.java:1454)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1451)
+	at org.eclipse.ui.internal.Workbench.close(Workbench.java:1424)
+	at org.eclipse.ui.internal.WorkbenchWindow.busyClose(WorkbenchWindow.java:1596)
+	at org.eclipse.ui.internal.WorkbenchWindow.access$16(WorkbenchWindow.java:1542)
+	at org.eclipse.ui.internal.WorkbenchWindow$11.run(WorkbenchWindow.java:1628)
+	at org.eclipse.swt.custom.BusyIndicator.showWhile(BusyIndicator.java:70)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1625)
+	at org.eclipse.ui.internal.WorkbenchWindow.close(WorkbenchWindow.java:1639)
+	at org.eclipse.ui.internal.WorkbenchWindow$6.close(WorkbenchWindow.java:527)
+	at org.eclipse.e4.ui.workbench.renderers.swt.WBWRenderer$7.shellClosed(WBWRenderer.java:518)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:98)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4362)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1113)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1137)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1122)
+	at org.eclipse.swt.widgets.Decorations.closeWidget(Decorations.java:308)
+	at org.eclipse.swt.widgets.Decorations.WM_CLOSE(Decorations.java:1703)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4678)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2544)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:498)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4774)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProcW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DefWindowProc(OS.java:2544)
+	at org.eclipse.swt.widgets.Shell.callWindowProc(Shell.java:498)
+	at org.eclipse.swt.widgets.Control.windowProc(Control.java:4774)
+	at org.eclipse.swt.widgets.Canvas.windowProc(Canvas.java:339)
+	at org.eclipse.swt.widgets.Decorations.windowProc(Decorations.java:1633)
+	at org.eclipse.swt.widgets.Shell.windowProc(Shell.java:2117)
+	at org.eclipse.swt.widgets.Display.windowProc(Display.java:5050)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessageW(Native Method)
+	at org.eclipse.swt.internal.win32.OS.DispatchMessage(OS.java:2549)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3767)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:694)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Input Stream Monitor' tid=2332 (WAITING)
+Waiting for: java.lang.Object@7d02187c
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.writeNext(InputStreamMonitor.java:156)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.write(InputStreamMonitor.java:125)
+	at org.eclipse.debug.internal.core.InputStreamMonitor$1.run(InputStreamMonitor.java:100)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Output Stream Monitor' tid=2331 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Output Stream Monitor' tid=2330 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Process monitor' tid=2321 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.ProcessImpl.waitForInterruptibly(Native Method)
+	at java.lang.ProcessImpl.waitFor(Unknown Source)
+	at org.eclipse.debug.core.model.RuntimeProcess$ProcessMonitorThread.run(RuntimeProcess.java:428)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Input Stream Monitor' tid=2320 (WAITING)
+Waiting for: java.lang.Object@2f92addc
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.writeNext(InputStreamMonitor.java:156)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.write(InputStreamMonitor.java:125)
+	at org.eclipse.debug.internal.core.InputStreamMonitor$1.run(InputStreamMonitor.java:100)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Output Stream Monitor' tid=2319 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Output Stream Monitor' tid=2318 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Worker-37' tid=2224 (WAITING)
+Waiting for: org.eclipse.ui.console.IOConsoleInputStream@2660efc8
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.ui.console.IOConsoleInputStream.waitForData(IOConsoleInputStream.java:150)
+	at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:93)
+	at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:119)
+	at org.eclipse.debug.internal.ui.views.console.ProcessConsole$InputReadJob.run(ProcessConsole.java:733)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Process monitor' tid=2159 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.ProcessImpl.waitForInterruptibly(Native Method)
+	at java.lang.ProcessImpl.waitFor(Unknown Source)
+	at org.eclipse.debug.core.model.RuntimeProcess$ProcessMonitorThread.run(RuntimeProcess.java:428)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Input Stream Monitor' tid=2158 (WAITING)
+Waiting for: java.lang.Object@0f7595a8
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.writeNext(InputStreamMonitor.java:156)
+	at org.eclipse.debug.internal.core.InputStreamMonitor.write(InputStreamMonitor.java:125)
+	at org.eclipse.debug.internal.core.InputStreamMonitor$1.run(InputStreamMonitor.java:100)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Output Stream Monitor' tid=2157 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Output Stream Monitor' tid=2156 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.io.FileInputStream.readBytes(Native Method)
+	at java.io.FileInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.BufferedInputStream.read1(Unknown Source)
+	at java.io.BufferedInputStream.read(Unknown Source)
+	at java.io.FilterInputStream.read(Unknown Source)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.read(OutputStreamMonitor.java:147)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor.access$1(OutputStreamMonitor.java:137)
+	at org.eclipse.debug.internal.core.OutputStreamMonitor$1.run(OutputStreamMonitor.java:212)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Worker-36' tid=2109 (WAITING)
+Waiting for: org.eclipse.ui.console.IOConsoleInputStream@38fffb27
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.ui.console.IOConsoleInputStream.waitForData(IOConsoleInputStream.java:150)
+	at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:93)
+	at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:119)
+	at org.eclipse.debug.internal.ui.views.console.ProcessConsole$InputReadJob.run(ProcessConsole.java:733)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Worker-33' tid=1859 (WAITING)
+Waiting for: org.eclipse.ui.console.IOConsoleInputStream@1342c4dc
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.ui.console.IOConsoleInputStream.waitForData(IOConsoleInputStream.java:150)
+	at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:93)
+	at org.eclipse.ui.console.IOConsoleInputStream.read(IOConsoleInputStream.java:119)
+	at org.eclipse.debug.internal.ui.views.console.ProcessConsole$InputReadJob.run(ProcessConsole.java:733)
+	at org.eclipse.core.internal.jobs.Worker.run(Worker.java:55)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'com.google.inject.internal.util.$Finalizer' tid=269 (WAITING)
+Waiting for: java.lang.ref.ReferenceQueue$Lock@03de1f3a
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at com.google.inject.internal.util.$Finalizer.run(Finalizer.java:114)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'TimerQueue' tid=114 (WAITING)
+Waiting for: java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject@638337e0
+Holding: java.util.concurrent.locks.ReentrantLock$NonfairSync@6bdd2299
+!STACK 0
+java.lang.Exception: Stack Trace
+	at sun.misc.Unsafe.park(Native Method)
+	at java.util.concurrent.locks.LockSupport.park(Unknown Source)
+	at java.util.concurrent.locks.AbstractQueuedSynchronizer$ConditionObject.await(Unknown Source)
+	at java.util.concurrent.DelayQueue.take(Unknown Source)
+	at javax.swing.TimerQueue.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.153
+!MESSAGE Thread 'Thread-8' tid=41 (TIMED_WAITING)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Thread.sleep(Native Method)
+	at org.eclipse.equinox.internal.p2.updatechecker.UpdateChecker$UpdateCheckThread.run(UpdateChecker.java:68)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.154
+!MESSAGE Thread 'EventAdmin Async Event Dispatcher Thread' tid=29 (WAITING)
+Waiting for: org.eclipse.swt.widgets.RunnableLock@2910bb24
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:199)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:145)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4761)
+	at org.eclipse.e4.ui.internal.workbench.swt.E4Application$1.syncExec(E4Application.java:211)
+	at org.eclipse.e4.ui.internal.di.UIEventObjectSupplier$UIEventHandler.handleEvent(UIEventObjectSupplier.java:53)
+	at org.eclipse.equinox.internal.event.EventHandlerWrapper.handleEvent(EventHandlerWrapper.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:197)
+	at org.eclipse.equinox.internal.event.EventHandlerTracker.dispatchEvent(EventHandlerTracker.java:1)
+	at org.eclipse.osgi.framework.eventmgr.EventManager.dispatchEvent(EventManager.java:230)
+	at org.eclipse.osgi.framework.eventmgr.EventManager$EventThread.run(EventManager.java:340)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.154
+!MESSAGE Thread 'Java indexing' tid=27 (WAITING)
+Waiting for: org.eclipse.jdt.internal.core.search.indexing.IndexManager@3ba8aa44
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.Object.wait(Unknown Source)
+	at org.eclipse.jdt.internal.core.search.processing.JobManager.run(JobManager.java:382)
+	at java.lang.Thread.run(Unknown Source)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.154
+!MESSAGE Thread 'EMF Reference Cleaner' tid=21 (WAITING)
+Waiting for: java.lang.ref.ReferenceQueue$Lock@35d6e09e
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at java.lang.ref.ReferenceQueue.remove(Unknown Source)
+	at org.eclipse.emf.common.util.CommonUtil$1ReferenceClearingQueuePollingThread.run(CommonUtil.java:70)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.154
+!MESSAGE Thread 'Worker-JM' tid=17 (WAITING)
+Waiting for: java.util.ArrayList@2fc2f73f
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.Object.wait(Native Method)
+	at org.eclipse.core.internal.jobs.InternalWorker.run(InternalWorker.java:59)
+!SUBENTRY 2 org.eclipse.ui.monitoring 1 0 2017-12-09 16:05:27.154
+!MESSAGE Thread 'Process monitor' tid=2333 (RUNNABLE)
+!STACK 0
+java.lang.Exception: Stack Trace
+	at java.lang.ProcessImpl.waitForInterruptibly(Native Method)
+	at java.lang.ProcessImpl.waitFor(Unknown Source)
+	at org.eclipse.debug.core.model.RuntimeProcess$ProcessMonitorThread.run(RuntimeProcess.java:428)
+!SESSION 2017-12-09 18:35:56.144 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_141
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_PE
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-09 19:55:27.034
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.MarkDuplicateElementIdsHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-09 19:55:27.768
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.MarkDuplicateLabelsHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-09 19:55:27.784
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.MarkDuplicateAttributesHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-09 19:55:27.799
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.RepairDuplicateItemsHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-09 19:55:27.816
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.UnmarkItemsHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-09 19:55:27.832
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.AutosizeColumnsHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-09 19:55:27.847
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.ResetToDefaultHandler
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-12-09 19:56:12.821
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\suite-sj305'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+!SESSION 2017-12-09 21:23:45.834 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_141
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_PE
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-09 21:23:55.100
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.MarkDuplicateElementIdsHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-09 21:23:55.116
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.MarkDuplicateLabelsHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-09 21:23:55.131
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.MarkDuplicateAttributesHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-09 21:23:55.147
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.RepairDuplicateItemsHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-09 21:23:55.147
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.UnmarkItemsHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-09 21:23:55.163
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.AutosizeColumnsHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-09 21:23:55.897
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.ResetToDefaultHandler
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-12-09 21:24:11.936
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\docentesjl'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.wb.core 4 4 2017-12-09 22:14:34.985
+!MESSAGE Designer [1.8.0.r45x201506110826.201712092214]: java.lang.NullPointerException
+!STACK 0
+java.lang.NullPointerException
+	at org.eclipse.wb.core.eval.AstEvaluationEngine$1.runObject(AstEvaluationEngine.java:65)
+	at org.eclipse.wb.internal.core.utils.execution.ExecutionUtils.runObjectLog(ExecutionUtils.java:304)
+	at org.eclipse.wb.core.eval.AstEvaluationEngine.evaluate(AstEvaluationEngine.java:63)
+	at org.eclipse.wb.internal.swing.model.component.JTableInfo.evaluateColumnModelInvocations(JTableInfo.java:76)
+	at org.eclipse.wb.internal.swing.model.component.JTableInfo.access$0(JTableInfo.java:69)
+	at org.eclipse.wb.internal.swing.model.component.JTableInfo$1.evaluateAfter(JTableInfo.java:62)
+	at sun.reflect.GeneratedMethodAccessor91.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.wb.core.model.broadcast.BroadcastSupport$1.intercept(BroadcastSupport.java:208)
+	at org.eclipse.wb.core.model.broadcast.EvaluationEventListener$$EnhancerByCGLIB$$77c859d1.evaluateAfter(<generated>)
+	at org.eclipse.wb.internal.core.parser.JavaInfoParser.evaluateNode(JavaInfoParser.java:1311)
+	at org.eclipse.wb.internal.core.parser.JavaInfoParser.access$1(JavaInfoParser.java:1300)
+	at org.eclipse.wb.internal.core.parser.JavaInfoParser$ExecutionFlowParseVisitor$3.run(JavaInfoParser.java:602)
+	at org.eclipse.wb.internal.core.utils.execution.ExecutionUtils.runRethrow(ExecutionUtils.java:119)
+	at org.eclipse.wb.internal.core.parser.JavaInfoParser$ExecutionFlowParseVisitor.postVisit(JavaInfoParser.java:592)
+	at sun.reflect.GeneratedMethodAccessor59.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.wb.core.eval.ExecutionFlowUtils$1.intercept(ExecutionFlowUtils.java:399)
+	at org.eclipse.jdt.core.dom.ASTVisitor$$EnhancerByCGLIB$$29d03d16.postVisit(<generated>)
+	at org.eclipse.jdt.core.dom.ASTNode.accept(ASTNode.java:2714)
+	at org.eclipse.wb.core.eval.ExecutionFlowUtils.visitStatement0(ExecutionFlowUtils.java:354)
+	at org.eclipse.wb.core.eval.ExecutionFlowUtils.visitStatement(ExecutionFlowUtils.java:315)
+	at org.eclipse.wb.core.eval.ExecutionFlowUtils.visitStatement0(ExecutionFlowUtils.java:336)
+	at org.eclipse.wb.core.eval.ExecutionFlowUtils.visitStatement(ExecutionFlowUtils.java:315)
+	at org.eclipse.wb.core.eval.ExecutionFlowUtils.visit(ExecutionFlowUtils.java:247)
+	at org.eclipse.wb.core.eval.ExecutionFlowUtils.visit(ExecutionFlowUtils.java:228)
+	at org.eclipse.wb.core.eval.ExecutionFlowUtils.visit(ExecutionFlowUtils.java:191)
+	at org.eclipse.wb.internal.core.parser.JavaInfoParser.parseRootMethods(JavaInfoParser.java:312)
+	at org.eclipse.wb.internal.core.parser.JavaInfoParser.parse(JavaInfoParser.java:268)
+	at org.eclipse.wb.internal.core.parser.JavaInfoParser.access$9(JavaInfoParser.java:238)
+	at org.eclipse.wb.internal.core.parser.JavaInfoParser$1.runObject(JavaInfoParser.java:153)
+	at org.eclipse.wb.internal.core.parser.JavaInfoParser$1.runObject(JavaInfoParser.java:1)
+	at org.eclipse.wb.internal.core.utils.execution.ExecutionUtils.runDesignTime(ExecutionUtils.java:159)
+	at org.eclipse.wb.internal.core.parser.JavaInfoParser.parse(JavaInfoParser.java:151)
+	at org.eclipse.wb.internal.core.editor.DesignPage.internal_refreshGEF(DesignPage.java:534)
+	at org.eclipse.wb.internal.core.editor.DesignPage.access$9(DesignPage.java:522)
+	at org.eclipse.wb.internal.core.editor.DesignPage$8$1.run(DesignPage.java:449)
+	at org.eclipse.swt.widgets.Synchronizer.syncExec(Synchronizer.java:186)
+	at org.eclipse.ui.internal.UISynchronizer.syncExec(UISynchronizer.java:145)
+	at org.eclipse.swt.widgets.Display.syncExec(Display.java:4761)
+	at org.eclipse.wb.internal.core.editor.DesignPage$8.run(DesignPage.java:446)
+	at org.eclipse.jface.operation.ModalContext.runInCurrentThread(ModalContext.java:463)
+	at org.eclipse.jface.operation.ModalContext.run(ModalContext.java:371)
+	at org.eclipse.jface.dialogs.ProgressMonitorDialog.run(ProgressMonitorDialog.java:500)
+	at org.eclipse.wb.internal.core.editor.DesignPage.internal_refreshGEF_withProgress(DesignPage.java:465)
+	at org.eclipse.wb.internal.core.editor.DesignPage.internal_refreshGEF(DesignPage.java:415)
+	at org.eclipse.wb.internal.core.editor.UndoManager.refreshDesignerEditor(UndoManager.java:381)
+	at org.eclipse.wb.internal.core.editor.UndoManager.activate(UndoManager.java:90)
+	at org.eclipse.wb.internal.core.editor.DesignPage.handleActiveState_True(DesignPage.java:263)
+	at org.eclipse.wb.internal.core.editor.DesignPage.handleActiveState(DesignPage.java:241)
+	at org.eclipse.wb.internal.core.editor.multi.DefaultMultiMode.showPage(DefaultMultiMode.java:125)
+	at org.eclipse.wb.internal.core.editor.multi.DefaultMultiMode$1.widgetSelected(DefaultMultiMode.java:63)
+	at org.eclipse.swt.widgets.TypedListener.handleEvent(TypedListener.java:248)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4362)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1113)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1137)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1122)
+	at org.eclipse.swt.widgets.Widget.notifyListeners(Widget.java:788)
+	at org.eclipse.swt.custom.CTabFolder.setSelection(CTabFolder.java:3158)
+	at org.eclipse.swt.custom.CTabFolder.onMouse(CTabFolder.java:1841)
+	at org.eclipse.swt.custom.CTabFolder$1.handleEvent(CTabFolder.java:330)
+	at org.eclipse.swt.widgets.EventTable.sendEvent(EventTable.java:84)
+	at org.eclipse.swt.widgets.Display.sendEvent(Display.java:4362)
+	at org.eclipse.swt.widgets.Widget.sendEvent(Widget.java:1113)
+	at org.eclipse.swt.widgets.Display.runDeferredEvents(Display.java:4180)
+	at org.eclipse.swt.widgets.Display.readAndDispatch(Display.java:3769)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine$4.run(PartRenderingEngine.java:1127)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.e4.ui.internal.workbench.swt.PartRenderingEngine.run(PartRenderingEngine.java:1018)
+	at org.eclipse.e4.ui.internal.workbench.E4Workbench.createAndRunUI(E4Workbench.java:156)
+	at org.eclipse.ui.internal.Workbench$5.run(Workbench.java:694)
+	at org.eclipse.core.databinding.observable.Realm.runWithDefault(Realm.java:337)
+	at org.eclipse.ui.internal.Workbench.createAndRunWorkbench(Workbench.java:606)
+	at org.eclipse.ui.PlatformUI.createAndRunWorkbench(PlatformUI.java:150)
+	at org.eclipse.ui.internal.ide.application.IDEApplication.start(IDEApplication.java:139)
+	at org.eclipse.equinox.internal.app.EclipseAppHandle.run(EclipseAppHandle.java:196)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.runApplication(EclipseAppLauncher.java:134)
+	at org.eclipse.core.runtime.internal.adaptor.EclipseAppLauncher.start(EclipseAppLauncher.java:104)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:380)
+	at org.eclipse.core.runtime.adaptor.EclipseStarter.run(EclipseStarter.java:235)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(Unknown Source)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(Unknown Source)
+	at java.lang.reflect.Method.invoke(Unknown Source)
+	at org.eclipse.equinox.launcher.Main.invokeFramework(Main.java:669)
+	at org.eclipse.equinox.launcher.Main.basicRun(Main.java:608)
+	at org.eclipse.equinox.launcher.Main.run(Main.java:1515)
+!SESSION 2017-12-15 20:26:42.165 -----------------------------------------------
+eclipse.buildId=4.5.2.M20160212-1500
+java.version=1.8.0_141
+java.vendor=Oracle Corporation
+BootLoader constants: OS=win32, ARCH=x86, WS=win32, NL=es_PE
+Framework arguments:  -product org.eclipse.epp.package.java.product
+Command-line arguments:  -os win32 -ws win32 -arch x86 -product org.eclipse.epp.package.java.product
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-15 20:27:37.165
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.MarkDuplicateElementIdsHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-15 20:27:37.181
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.MarkDuplicateLabelsHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-15 20:27:37.197
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.MarkDuplicateAttributesHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-15 20:27:37.197
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.RepairDuplicateItemsHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-15 20:27:37.212
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.UnmarkItemsHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-15 20:27:37.228
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.AutosizeColumnsHandler
+
+!ENTRY org.eclipse.e4.ui.workbench 4 0 2017-12-15 20:27:37.244
+!MESSAGE Unable to retrieve the bundle from the URI: bundleclass://org.eclipse.e4.tools.emf.ui/org.eclipse.e4.tools.emf.ui.internal.handlers.ResetToDefaultHandler
+
+!ENTRY org.eclipse.egit.ui 2 0 2017-12-15 20:28:15.667
+!MESSAGE Warning: The environment variable HOME is not set. The following directory will be used to store the Git
+user global configuration and to define the default location to store repositories: 'C:\Users\docentesjl'. If this is
+not correct please set the HOME environment variable and restart Eclipse. Otherwise Git for Windows and
+EGit might behave differently since they see different configuration options.
+This warning can be switched off on the Team > Git > Confirmations and Warnings preference page.
+
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2017-12-15 20:28:16.561
+!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: Connect to 127.0.0.1:9666 [/127.0.0.1] failed: Connection refused: connect. ; version: 1.100.0.v20160217-0435
+!STACK 0
+org.apache.http.conn.HttpHostConnectException: Connect to 127.0.0.1:9666 [/127.0.0.1] failed: Connection refused: connect
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:142)
+	at org.apache.http.impl.conn.PoolingHttpClientConnectionManager.connect(PoolingHttpClientConnectionManager.java:319)
+	at org.apache.http.impl.execchain.MainClientExec.establishRoute(MainClientExec.java:371)
+	at org.apache.http.impl.execchain.MainClientExec.execute(MainClientExec.java:219)
+	at org.apache.http.impl.execchain.ProtocolExec.execute(ProtocolExec.java:195)
+	at org.apache.http.impl.execchain.RetryExec.execute(RetryExec.java:86)
+	at org.apache.http.impl.execchain.RedirectExec.execute(RedirectExec.java:108)
+	at org.apache.http.impl.client.InternalHttpClient.doExecute(InternalHttpClient.java:184)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:82)
+	at org.apache.http.impl.client.CloseableHttpClient.execute(CloseableHttpClient.java:57)
+	at org.apache.http.client.fluent.Executor.execute(Executor.java:206)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.request(IO.java:205)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:68)
+	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
+	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
+	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.net.ConnectException: Connection refused: connect
+	at java.net.DualStackPlainSocketImpl.waitForConnect(Native Method)
+	at java.net.DualStackPlainSocketImpl.socketConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.doConnect(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connectToAddress(Unknown Source)
+	at java.net.AbstractPlainSocketImpl.connect(Unknown Source)
+	at java.net.PlainSocketImpl.connect(Unknown Source)
+	at java.net.SocksSocketImpl.connect(Unknown Source)
+	at java.net.Socket.connect(Unknown Source)
+	at org.apache.http.conn.socket.PlainConnectionSocketFactory.connectSocket(PlainConnectionSocketFactory.java:72)
+	at org.apache.http.impl.conn.HttpClientConnectionOperator.connect(HttpClientConnectionOperator.java:125)
+	... 16 more

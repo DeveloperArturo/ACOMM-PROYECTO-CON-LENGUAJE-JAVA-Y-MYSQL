@@ -1,0 +1,63 @@
+package Adicionales;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.Cursor;
+import javax.swing.DropMode;
+
+public class iniciarSesion extends JFrame {
+
+	private JPanel contentPane;
+	private JLabel lbiniciarsecion;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					iniciarSesion frame = new iniciarSesion();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public iniciarSesion() {
+		setUndecorated(true);
+		 this.setBackground(new Color(0,0,0,0));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 511, 708);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBackground(new Color(0,0,0,0));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		lbiniciarsecion = new JLabel("");
+		lbiniciarsecion.setBounds(0, 0, 495, 670);
+		contentPane.add(lbiniciarsecion);
+		ImageIcon fondo2=new ImageIcon(getClass().getResource("/img/iniciar Sesionn.png"));
+		ImageIcon icon2=new ImageIcon(fondo2.getImage().getScaledInstance(lbiniciarsecion.getWidth(),lbiniciarsecion .getHeight(),Image.SCALE_DEFAULT));
+		lbiniciarsecion.setIcon(icon2);
+		
+	}
+
+}

@@ -1,0 +1,847 @@
+package Formulario;
+
+import java.awt.BorderLayout;
+import java.awt.Color;
+import java.awt.Cursor;
+import java.awt.EventQueue;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.MouseInfo;
+import java.awt.Point;
+import java.awt.SystemColor;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+
+import javax.swing.ImageIcon;
+import javax.swing.JButton;
+import javax.swing.JFrame;
+import javax.swing.JLabel;
+import javax.swing.JOptionPane;
+import javax.swing.JPanel;
+import javax.swing.JScrollPane;
+import javax.swing.JTable;
+import javax.swing.JTextField;
+import javax.swing.RowFilter;
+import javax.swing.UIManager;
+import javax.swing.border.EmptyBorder;
+import javax.swing.border.LineBorder;
+import javax.swing.table.DefaultTableModel;
+import javax.swing.table.TableColumnModel;
+import javax.swing.table.TableRowSorter;
+import javax.swing.JComboBox;
+
+import com.mysql.jdbc.Connection;
+import com.mysql.jdbc.ResultSetImpl;
+import com.toedter.calendar.JCalendar;
+
+import Array.ArrayCliente;
+import Array.arraydetalle;
+import Array.añadirArrayBebida;
+import Array.añadirArraypiqueo;
+import Clases.claseCliente;
+import Clases.clasedetalle;
+
+import javax.swing.DefaultComboBoxModel;
+import java.awt.event.KeyListener;
+import java.awt.event.KeyEvent;
+import java.awt.event.MouseMotionListener;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+public class Detalleconsumo extends JFrame   implements ActionListener, MouseListener, KeyListener, MouseMotionListener{
+
+	private JPanel contentPane;
+	private JLabel labelUsuario;
+	private JButton btnmini;
+	private JButton btnX;
+	private JLabel label;
+	private JLabel label_1;
+	private JLabel label_2;
+	private JButton btnAcon;
+	private JLabel lb;
+	private JLabel label_3;
+	private JLabel lblUsuarios;
+	private JLabel label_4;
+	private DefaultTableModel modelo;
+	private JPanel panelfondo;
+	private JTable tableBebida;
+	private JScrollPane scrollPane;
+	private JButton btnGrabar;
+	private JButton btnAñadir;
+	private JButton btnEliminar;
+	private int p,b;
+	
+	private DefaultTableModel modelo1;
+	private DefaultTableModel modelo2;
+	TableRowSorter trs1;
+	TableRowSorter trs2;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		
+		
+		try {
+
+			
+			UIManager.setLookAndFeel("com.sun.java.swing.plaf.windows.WindowsLookAndFeel");
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+		
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					Detalleconsumo frame = new Detalleconsumo();
+					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public Detalleconsumo() {
+		setUndecorated(true);
+		final int ANCHO = 1000,
+		          ALTO = 650,
+		          DX = 8,
+		          DY = 53;
+		
+		setResizable(false);
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds((getToolkit().getScreenSize().width - ANCHO - DX) / 2,
+				  (getToolkit().getScreenSize().height - ALTO - DY) / 2,
+				   1019, 737);
+
+
+		contentPane = new JPanel();
+		contentPane.setCursor(Cursor.getPredefinedCursor(Cursor.MOVE_CURSOR));
+		contentPane.addMouseMotionListener(this);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+			ImageIcon fondo1=new ImageIcon(getClass().getResource("/img/imprimir.png"));
+			ImageIcon fondo2=new ImageIcon(getClass().getResource("/img/imprimir2.png"));
+		ImageIcon fondo10=new ImageIcon(getClass().getResource("/img/paginaWeb.png"));
+		
+		panelfondo = new JPanel();
+		panelfondo.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		panelfondo.setBackground(SystemColor.control);
+		panelfondo.setBounds(10, 118, 1002, 592);
+		contentPane.add(panelfondo);
+		panelfondo.setLayout(null);
+		
+		txtBusqueda = new JTextField();
+		txtBusqueda.addKeyListener(this);
+		
+		lblConsumo = new JLabel("Consumo");
+		lblConsumo.setForeground(Color.WHITE);
+		lblConsumo.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblConsumo.setBounds(573, 7, 152, 14);
+		panelfondo.add(lblConsumo);
+		txtBusqueda.setBorder(new LineBorder(new Color(171, 173, 179), 0));
+		txtBusqueda.setBounds(715, 310, 130, 20);
+		panelfondo.add(txtBusqueda);
+		txtBusqueda.setColumns(10);
+		
+		lblBusqueda = new JLabel("Busqueda");
+		lblBusqueda.setForeground(Color.WHITE);
+		lblBusqueda.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblBusqueda.setBounds(629, 307, 76, 14);
+		panelfondo.add(lblBusqueda);
+		
+		label_18 = new JLabel("");
+		label_18.setIcon(new ImageIcon(Detalleconsumo.class.getResource("/img/rojon.png")));
+		label_18.setBounds(555, 304, 447, 33);
+		panelfondo.add(label_18);
+		
+		lblDetallePiqueo = new JLabel("Detalle Piqueo");
+		lblDetallePiqueo.setForeground(Color.WHITE);
+		lblDetallePiqueo.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblDetallePiqueo.setBounds(308, 6, 152, 14);
+		panelfondo.add(lblDetallePiqueo);
+		
+		lblDetalleBebida = new JLabel("Detalle Bebida");
+		lblDetalleBebida.setForeground(Color.WHITE);
+		lblDetalleBebida.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblDetalleBebida.setBounds(32, 5, 152, 14);
+		panelfondo.add(lblDetalleBebida);
+		
+		scrollPane = new JScrollPane();
+		scrollPane.setBackground(Color.WHITE);
+		scrollPane.setBorder(new LineBorder(Color.WHITE, 3));
+		scrollPane.setBounds(0, 30, 253, 563);
+		panelfondo.add(scrollPane);
+		
+		tableBebida = new JTable();
+		tableBebida.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		tableBebida.setForeground(Color.BLACK);
+		tableBebida.setFont(new Font("Tahoma", Font.PLAIN, 11));
+		tableBebida.addMouseListener(this);
+	
+		tableBebida.setBackground(Color.WHITE);
+		scrollPane.setViewportView(tableBebida);
+		
+		label_4 = new JLabel("\u00C1COMM Karaoke");
+		label_4.setForeground(new Color(165, 42, 42));
+		label_4.setFont(new Font("Tahoma", Font.BOLD, 12));
+		label_4.setBounds(873, 49, 108, 14);
+		contentPane.add(label_4);
+		
+		lblUsuarios = new JLabel("Detalle Consumo");
+		lblUsuarios.setForeground(Color.WHITE);
+		lblUsuarios.setFont(new Font("Times New Roman", Font.BOLD, 15));
+		lblUsuarios.setBounds(56, 86, 152, 14);
+		contentPane.add(lblUsuarios);
+		
+		label_3 = new JLabel("");
+		label_3.setIcon(new ImageIcon(Cancion.class.getResource("/img/canc.png")));
+		label_3.setBounds(20, 74, 38, 45);
+		contentPane.add(label_3);
+		
+		lb = new JLabel("");
+		lb.setBounds(9, 74, 1002, 45);
+		contentPane.add(lb);
+		ImageIcon fondo3=new ImageIcon(getClass().getResource("/img/rojon.png"));
+		ImageIcon icon3=new ImageIcon(fondo3.getImage().getScaledInstance(lb.getWidth(), lb.getHeight(),Image.SCALE_DEFAULT));
+		lb.setIcon(icon3);
+		
+		label_2 = new JLabel("\u00C1COMM Karaoke");
+		label_2.setForeground(Color.WHITE);
+		label_2.setFont(new Font("Tahoma", Font.BOLD, 12));
+		label_2.setBounds(68, 7, 140, 14);
+		contentPane.add(label_2);
+		
+		btnAcon = new JButton("");
+		btnAcon.addActionListener(this);
+		btnAcon.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnAcon.setRolloverIcon(new ImageIcon(Detalleconsumo.class.getResource("/img/logo.png")));
+		btnAcon.setIcon(new ImageIcon(Detalleconsumo.class.getResource("/img/princi2.png")));
+		btnAcon.setFocusable(false);
+		btnAcon.setFocusTraversalKeysEnabled(false);
+		btnAcon.setFocusPainted(false);
+		btnAcon.setContentAreaFilled(false);
+		btnAcon.setBorderPainted(false);
+		btnAcon.setBounds(10, -4, 48, 56);
+		contentPane.add(btnAcon);
+		
+		label_1 = new JLabel("-");
+		label_1.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		label_1.setForeground(Color.WHITE);
+		label_1.setFont(new Font("Tahoma", Font.BOLD, 19));
+		label_1.setBounds(965, 1, 11, 14);
+		contentPane.add(label_1);
+		
+		label = new JLabel("x");
+		label.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		label.setForeground(Color.WHITE);
+		label.setFont(new Font("Tahoma", Font.BOLD, 14));
+		label.setBounds(998, -1, 11, 14);
+		contentPane.add(label);
+		
+		btnmini = new JButton("");
+		btnmini.addActionListener(this);
+		btnmini.setRolloverIcon(new ImageIcon(Usuario.class.getResource("/img/transs.png")));
+		btnmini.setIcon(new ImageIcon(Usuario.class.getResource("/img/btnx.png")));
+		btnmini.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnmini.setForeground(Color.WHITE);
+		btnmini.setFocusable(false);
+		btnmini.setFocusTraversalKeysEnabled(false);
+		btnmini.setFocusPainted(false);
+		btnmini.setContentAreaFilled(false);
+		btnmini.setBorderPainted(false);
+		btnmini.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		btnmini.setBackground(Color.WHITE);
+		btnmini.setBounds(952, -4, 37, 28);
+		contentPane.add(btnmini);
+		
+		btnX = new JButton("");
+		btnX.addActionListener(this);
+		btnX.setRolloverIcon(new ImageIcon(Usuario.class.getResource("/img/transs.png")));
+		btnX.setIcon(new ImageIcon(Usuario.class.getResource("/img/btnx.png")));
+		btnX.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnX.setForeground(Color.WHITE);
+		btnX.setFocusable(false);
+		btnX.setFocusTraversalKeysEnabled(false);
+		btnX.setFocusPainted(false);
+		btnX.setContentAreaFilled(false);
+		btnX.setBorderPainted(false);
+		btnX.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		btnX.setBackground(Color.WHITE);
+		btnX.setBounds(984, -4, 37, 28);
+		contentPane.add(btnX);
+		
+		labelUsuario = new JLabel("");
+		labelUsuario.setBounds(0, 0, 1019, 737);
+		contentPane.add(labelUsuario);
+		ImageIcon fondo20=new ImageIcon(getClass().getResource("/img/princi.png"));
+		ImageIcon icon20=new ImageIcon(fondo20.getImage().getScaledInstance(labelUsuario.getWidth(), labelUsuario.getHeight(),Image.SCALE_DEFAULT));
+		labelUsuario.setIcon(icon20);
+		
+
+		
+		scrollPane_1 = new JScrollPane();
+		scrollPane_1.setBackground(new Color(255, 255, 255));
+		scrollPane_1.setBorder(new LineBorder(new Color(255, 255, 255), 3));
+		scrollPane_1.setBounds(264, 31, 278, 562);
+		panelfondo.add(scrollPane_1);
+		
+		tablePiqueo = new JTable();
+		scrollPane_1.setViewportView(tablePiqueo);
+		
+		label_5 = new JLabel("");
+		label_5.setIcon(new ImageIcon(Detalleconsumo.class.getResource("/img/rojon.png")));
+		label_5.setBounds(0, 0, 253, 33);
+		panelfondo.add(label_5);
+		
+		label_16 = new JLabel("");
+		label_16.setIcon(new ImageIcon(Detalleconsumo.class.getResource("/img/rojon.png")));
+		label_16.setBounds(264, 0, 278, 33);
+		panelfondo.add(label_16);
+		
+		scrollPane_3 = new JScrollPane();
+		scrollPane_3.setBorder(new LineBorder(Color.WHITE, 3));
+		scrollPane_3.setBounds(555, 35, 447, 271);
+		panelfondo.add(scrollPane_3);
+		
+		tabledetalle = new JTable();
+		tabledetalle.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		scrollPane_3.setViewportView(tabledetalle);
+		
+		btnGrabar = new JButton("");
+		btnGrabar.setBounds(715, 527, 213, 66);
+		panelfondo.add(btnGrabar);
+		btnGrabar.addActionListener(this);
+		btnGrabar.setIcon(new ImageIcon(Detalleconsumo.class.getResource("/img/pdf.png")));
+		btnGrabar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnGrabar.setFocusable(false);
+		btnGrabar.setFocusTraversalKeysEnabled(false);
+		btnGrabar.setFocusPainted(false);
+		btnGrabar.setDefaultCapable(false);
+		btnGrabar.setContentAreaFilled(false);
+		btnGrabar.setBorderPainted(false);
+		
+		btnAñadir = new JButton("A\u00F1adir");
+		btnAñadir.setBounds(906, 439, 96, 52);
+		panelfondo.add(btnAñadir);
+		btnAñadir.addActionListener(this);
+		btnAñadir.setIcon(new ImageIcon(Usuario.class.getResource("/img/a\u00F1adir.png")));
+		btnAñadir.setFocusPainted(false);
+		btnAñadir.setFocusTraversalKeysEnabled(false);
+		btnAñadir.setFocusable(false);
+		btnAñadir.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		btnAñadir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnAñadir.setForeground(SystemColor.windowBorder);
+		btnAñadir.setFont(new Font("Times New Roman", Font.BOLD, 13));
+		
+		btnEliminar = new JButton("Eliminar");
+		btnEliminar.setBounds(906, 356, 96, 52);
+		panelfondo.add(btnEliminar);
+		btnEliminar.addActionListener(this);
+		btnEliminar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnEliminar.setIcon(new ImageIcon(Usuario.class.getResource("/img/remover.png")));
+		btnEliminar.setForeground(SystemColor.windowBorder);
+		btnEliminar.setFont(new Font("Times New Roman", Font.BOLD, 13));
+		btnEliminar.setFocusable(false);
+		btnEliminar.setFocusTraversalKeysEnabled(false);
+		btnEliminar.setFocusPainted(false);
+		btnEliminar.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		
+		panel = new JPanel();
+		panel.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		panel.setBackground(Color.WHITE);
+		panel.setBounds(555, 348, 347, 182);
+		panelfondo.add(panel);
+		panel.setLayout(null);
+		
+		lblIdcliente = new JLabel("IDCliente");
+		lblIdcliente.setForeground(Color.DARK_GRAY);
+		lblIdcliente.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblIdcliente.setBounds(53, 12, 76, 14);
+		panel.add(lblIdcliente);
+		
+		cmbCliente = new JComboBox();
+		cmbCliente.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		cmbCliente.setBounds(41, 37, 106, 20);
+		panel.add(cmbCliente);
+		
+		lblFechaConsumo = new JLabel("Fecha Consumo");
+		lblFechaConsumo.setForeground(Color.DARK_GRAY);
+		lblFechaConsumo.setFont(new Font("Tahoma", Font.BOLD, 12));
+		lblFechaConsumo.setBounds(41, 96, 95, 14);
+		panel.add(lblFechaConsumo);
+		
+		consumo = new JCalendar();
+		consumo.getDayChooser().getDayPanel().setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		consumo.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		consumo.setWeekdayForeground(Color.WHITE);
+		consumo.setDecorationBackgroundColor(Color.BLACK);
+		consumo.setBounds(157, 12, 190, 159);
+		panel.add(consumo);
+		
+
+		
+		modelo1=new DefaultTableModel();
+		modelo1.addColumn("IDReserva");
+		modelo1.addColumn("IDPiq");
+		modelo1.addColumn("Nom");
+		modelo1.addColumn("Tipo");
+		modelo1.addColumn("Precio");
+		tablePiqueo.setModel(modelo1);
+		
+		
+		modelo2=new DefaultTableModel();
+		modelo2.addColumn("IDResera");
+		modelo2.addColumn("IDBeb");
+		modelo2.addColumn("Nom");
+		modelo2.addColumn("Marca");
+		modelo2.addColumn("Precio");
+		tableBebida.setModel(modelo2);
+		
+		
+		modelo=new DefaultTableModel();
+		modelo.addColumn("Consumo");
+		modelo.addColumn("cliente");
+		modelo.addColumn("bebida");
+		modelo.addColumn("precioB");
+		modelo.addColumn("piqueo");
+		modelo.addColumn("precioP");
+		modelo.addColumn("fecha");
+		modelo.addColumn("total");
+		tabledetalle.setModel(modelo);
+		
+		label_6 = new JLabel("");
+		label_6.setIcon(new ImageIcon(Detalleconsumo.class.getResource("/img/rojon.png")));
+		label_6.setBounds(552, 0, 450, 33);
+		panelfondo.add(label_6);
+		
+		
+		//ancho();
+		listartabla();
+		codigoCliente();
+		listartabla2();
+		listartabla3();
+		
+	}
+	public void actionPerformed(ActionEvent arg0) {
+		if (arg0.getSource() == btnmini) {
+			actionPerformedBtnmini(arg0);
+		}
+		if (arg0.getSource() == btnAcon) {
+			do_btnAcon_actionPerformed(arg0);
+		}
+		if (arg0.getSource() == btnGrabar) {
+			do_btnGrabar_actionPerformed(arg0);
+		}
+		if (arg0.getSource() == btnEliminar) {
+			do_btnEliminar_actionPerformed(arg0);
+		}
+		if (arg0.getSource() == btnAñadir) {
+			do_btnAñadir_actionPerformed(arg0);
+		}
+		if (arg0.getSource() == btnX) {
+			do_btnX_actionPerformed(arg0);
+		}
+	}
+
+	private JLabel blID;
+	private JTable tablePiqueo;
+	private JScrollPane scrollPane_1;
+	private JLabel label_5;
+	private JLabel label_16;
+	private JLabel lblDetalleBebida;
+	private JLabel lblDetallePiqueo;
+	private JTable tabledetalle;
+	private JLabel label_18;
+	private JLabel lblBusqueda;
+	private JTextField txtBusqueda;
+	private JScrollPane scrollPane_3;
+	private JPanel panel;
+	private JLabel lblIdcliente;
+	private JComboBox cmbCliente;
+	private JLabel lblFechaConsumo;
+	private JCalendar consumo;
+	
+	
+	
+	
+	private int anchoColumna(int porcentaje) {
+		return porcentaje * scrollPane .getWidth() / 100;
+	}
+	ArrayCliente ac=new ArrayCliente();
+	private void codigoCliente() {
+		
+		Connection c=null;
+		 try {
+				
+				Class.forName("com.mysql.jdbc.Driver");
+				c=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/acomm","root","mysql");
+						
+				} catch (Exception e) {
+				e.getMessage();
+			}
+		 try {
+				
+				com.mysql.jdbc.PreparedStatement p=(com.mysql.jdbc.PreparedStatement) c.prepareStatement("select*from cliente");
+						
+				ResultSet r=p.executeQuery();
+
+
+				while (r.next()) {
+				
+				cmbCliente.addItem(r.getString("cod_cliente"));	
+				
+		
+				}
+				
+				
+			} catch (Exception e) {
+				// TODO: handle exception
+			}
+			 
+			 
+		
+		
+	}
+	
+añadirArraypiqueo piqueo=new  añadirArraypiqueo();
+	
+	private void listartabla2(){
+		Connection c = null;
+		try {
+		
+				Class.forName("com.mysql.jdbc.Driver");
+	c=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/acomm","root","mysql");
+				
+		} catch (Exception e) {
+		
+		}
+
+		
+		try {
+					
+					
+					com.mysql.jdbc.PreparedStatement p=(com.mysql.jdbc.PreparedStatement) c.prepareStatement("select  a.cod_reserva,a.cod_piqueo,a.nombre,a.tipo_piqueo,a.precio  from anadir_pequio  a");
+							
+					ResultSet r=p.executeQuery();
+				
+				modelo1.setRowCount(0);
+					while (r.next()) {
+					modelo1.addRow(new Object[]{r.getString(1),r.getInt(2),r.getString(3),r.getString(4),r.getDouble(5)});
+					tablePiqueo.setModel(modelo1);
+					
+		
+					}
+						} catch (Exception e) {
+						
+							e.printStackTrace();
+						}
+
+
+		
+	}
+	añadirArrayBebida aabb=	new  añadirArrayBebida();
+
+	private void listartabla3(){
+		
+		
+		}
+			
+			
+		
+	
+	private void ancho(){
+		TableColumnModel u = tableBebida.getColumnModel();
+		u.getColumn(0).setPreferredWidth(anchoColumna(40)); 
+		u.getColumn(1).setPreferredWidth(anchoColumna(63)); 
+		u.getColumn(2).setPreferredWidth(anchoColumna(58));  
+		u.getColumn(3).setPreferredWidth(anchoColumna(65)); 
+		u.getColumn(4).setPreferredWidth(anchoColumna(59));  
+		u.getColumn(5).setPreferredWidth(anchoColumna(95));  
+		u.getColumn(6).setPreferredWidth(anchoColumna(59));  
+		
+
+	}
+	
+	protected void do_btnX_actionPerformed(ActionEvent arg0) {
+		int i=JOptionPane.showConfirmDialog(null,"Desea salir","salir", JOptionPane.YES_OPTION,JOptionPane.QUESTION_MESSAGE);
+		if(i==JOptionPane.YES_OPTION)
+		dispose();
+		else
+			JOptionPane.showMessageDialog(null,"exito");
+	}
+	
+	 arraydetalle detalle=new  arraydetalle();
+	 private void listartabla(){
+			
+		 
+			Connection c = null;
+			try {
+			
+					Class.forName("com.mysql.jdbc.Driver");
+		c=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/acomm","root","mysql");
+					
+			} catch (Exception e) {
+			
+			}
+			
+			
+			
+			
+			
+			try {
+						
+						
+						com.mysql.jdbc.PreparedStatement p=(com.mysql.jdbc.PreparedStatement) c.prepareStatement("select a.cod_reserva,a.cod_bebida,a.nombre,a.tipo_bebida,a.precio  from añadir_bebida a");
+								
+						ResultSet r=p.executeQuery();
+					
+					modelo2.setRowCount(0);
+						while (r.next()) {
+						modelo2.addRow(new Object[]{r.getString(1),r.getInt(2),r.getString(3),r.getString(4),r.getDouble(5)});
+						tableBebida.setModel(modelo2);
+						
+			
+						}
+							} catch (Exception e) {
+							
+								e.printStackTrace();
+							}
+
+
+
+			
+		}
+	protected void do_btnAñadir_actionPerformed(ActionEvent arg0) {
+		
+		Connection c = null;
+		try {
+		
+				Class.forName("com.mysql.jdbc.Driver");
+	c=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/acomm","root","mysql");
+				
+		} catch (Exception e) {
+		
+		}
+		
+		
+
+		
+		 try {
+			 
+			 
+			
+	PreparedStatement ps=c.prepareStatement("insert into detalle values(?,?,?,?,?,?,?,?,?)");
+					
+
+				ps.setInt(1,detalle.generar());
+				ps.setString(2,cmbCliente.getSelectedItem().toString());
+
+
+				try {
+					
+					 
+					com.mysql.jdbc.Statement s2=(com.mysql.jdbc.Statement) c.createStatement();
+					
+				ResultSetImpl r2=(ResultSetImpl) s2.executeQuery("select cod_bebida,precio "
+						+ " from añadir_bebida where cod_bebida="+tableBebida.getValueAt(p,1));
+					
+					 
+			
+			modelo.addColumn("Consumo");
+			modelo.addColumn("cliente");
+			modelo.addColumn("bebida");
+			modelo.addColumn("precioB");
+			modelo.addColumn("piqueo");
+			modelo.addColumn("precioP");
+			modelo.addColumn("fecha");
+			modelo.addColumn("total");
+			
+			if(r2.next()){
+				
+				
+				
+				
+			}	
+			com.mysql.jdbc.Statement s=(com.mysql.jdbc.Statement) c.createStatement();
+				
+			ResultSetImpl r=(ResultSetImpl) s.executeQuery("select cod_piqueo,precio "
+					+ " from anadir_pequio where cod_piqueo="+tablePiqueo.getValueAt(p,1));
+				
+			
+		if(r.next()){
+			
+			
+			
+			
+		}	
+		 
+			
+			
+				//listartabla();
+					
+				
+				
+		 }catch (Exception e) {
+		e.printStackTrace();	
+		}
+				
+					
+				} catch (SQLException  e) {
+					
+		
+					e.printStackTrace();
+					
+				}
+		
+				dispose();
+				new Detalleconsumo().setVisible(true);
+					
+
+		
+		b=tableBebida.getSelectedRow();
+		p=tablePiqueo.getSelectedRow();
+
+		
+		
+		
+		DateFormat formato=new SimpleDateFormat("dd/MM/YYYY");
+		String  consumo1=formato.format(consumo.getDate());
+
+		
+		double pagar=aabb.Obtener(b).getPrecio()+piqueo.Obtener(p).getPrecio();
+		
+		
+		
+		
+		
+	
+	}
+	protected void do_btnEliminar_actionPerformed(ActionEvent arg0) {
+		
+		int i=JOptionPane.showConfirmDialog(null,"Desea Eliminar","Eliminar", JOptionPane.YES_OPTION,JOptionPane.QUESTION_MESSAGE);
+		if(i==JOptionPane.YES_OPTION){
+		p=tabledetalle.getSelectedRow();
+
+		listartabla();
+		}
+		else{
+			JOptionPane.showMessageDialog(null,"exito");
+		}
+	}
+	public void mouseClicked(MouseEvent arg0) {
+		if (arg0.getSource() == tableBebida) {
+			do_table_mouseClicked(arg0);
+		}
+	}
+	public void mouseEntered(MouseEvent arg0) {
+	}
+	
+	
+	public void mousePressed(MouseEvent e) {
+	}
+	public void mouseReleased(MouseEvent e) {
+	}
+	
+	
+	
+	
+	protected void do_table_mouseClicked(MouseEvent arg0) {
+		
+			
+			
+	}
+	protected void do_btnGrabar_actionPerformed(ActionEvent arg0) {
+		
+		
+		
+		
+	}
+	protected void do_btnAcon_actionPerformed(ActionEvent arg0) {
+		
+	
+	}
+	
+	public void mouseExited(MouseEvent arg0) {
+	}
+	public void keyPressed(KeyEvent arg0) {
+	}
+	public void keyReleased(KeyEvent arg0) {
+	}
+	public void keyTyped(KeyEvent arg0) {
+		if (arg0.getSource() == txtBusqueda) {
+			do_txtBusqueda_keyTyped(arg0);
+		}
+	}
+	public void buscar(){
+		txtBusqueda.addKeyListener(new KeyAdapter() {
+			
+			public void keyReleased(KeyEvent ev){
+				trs1.setRowFilter(RowFilter.regexFilter(txtBusqueda.getText(),0));
+					
+			}
+			});
+			trs1=new TableRowSorter(modelo1) ;
+			tableBebida.setRowSorter(trs1);
+		
+		
+
+	}
+	public void buscar2(){
+		txtBusqueda.addKeyListener(new KeyAdapter() {
+			
+			public void keyReleased(KeyEvent ev){
+				trs2.setRowFilter(RowFilter.regexFilter(txtBusqueda.getText(),0));
+					
+			}
+			});
+			trs2=new TableRowSorter(modelo2) ;
+			tablePiqueo.setRowSorter(trs2);
+		
+		
+
+	}
+	protected void do_txtBusqueda_keyTyped(KeyEvent arg0) {
+		buscar();
+		buscar2();
+		
+	}
+	public void mouseDragged(MouseEvent arg0) {
+		if (arg0.getSource() == contentPane) {
+			mouseDraggedContentPane(arg0);
+		}
+	}
+	
+	int x,y;
+	private JLabel label_6;
+	private JLabel lblConsumo;
+	public void mouseMoved(MouseEvent arg0) {
+
+		x=arg0.getX();
+		y=arg0.getY();
+		
+	}
+	protected void mouseDraggedContentPane(MouseEvent arg0) {
+		
+		Point p=MouseInfo.getPointerInfo().getLocation();
+		setLocation(p.x-x, p.y-y);
+	}
+	protected void actionPerformedBtnmini(ActionEvent arg0) {
+		setExtendedState(1);
+	}
+}

@@ -1,0 +1,169 @@
+package mapas;
+
+import java.awt.BorderLayout;
+
+import java.awt.Color;
+import java.awt.EventQueue;
+
+import javax.swing.JInternalFrame;
+import javax.swing.JPanel;
+
+import com.mysql.jdbc.Connection;
+import com.teamdev.jxbrowser.chromium.Browser;
+import com.teamdev.jxbrowser.chromium.BrowserContext;
+import com.teamdev.jxbrowser.chromium.BrowserContextParams;
+import com.teamdev.jxbrowser.chromium.swing.BrowserView;
+
+
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.border.LineBorder;
+import java.awt.event.MouseListener;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.awt.event.MouseEvent;
+
+public class google extends JFrame implements ActionListener, MouseListener {
+	private JButton btnMapa;
+	private JInternalFrame internalFrame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					google frame = new google();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public google() {
+		getContentPane().setBackground(Color.BLACK);
+		getContentPane().setForeground(Color.RED);
+		setBounds(100, 100, 732, 482);
+		
+		btnMapa = new JButton("mapa");
+		btnMapa.addMouseListener(this);
+		btnMapa.setBounds(536, 24, 125, 50);
+		btnMapa.addActionListener(this);
+		getContentPane().setLayout(null);
+		getContentPane().add(btnMapa);
+		
+		internalFrame = new JInternalFrame("New JInternalFrame");
+		internalFrame.setBounds(10, 11, 496, 421);
+		getContentPane().add(internalFrame);
+		internalFrame.setVisible(true);
+
+	}
+	public void actionPerformed(ActionEvent arg0) {
+		if (arg0.getSource() == btnMapa) {
+			actionPerformedBtnMapa(arg0);
+		}
+	}
+	protected void actionPerformedBtnMapa(ActionEvent arg0) {
+
+	}
+	public void mouseClicked(MouseEvent arg0) {
+		if (arg0.getSource() == btnMapa) {
+			mouseClickedBtnMapa(arg0);
+		}
+	}
+	public void mouseEntered(MouseEvent arg0) {
+	}
+	public void mouseExited(MouseEvent arg0) {
+	}
+	public void mousePressed(MouseEvent arg0) {
+	}
+	public void mouseReleased(MouseEvent arg0) {
+	}
+	protected void mouseClickedBtnMapa(MouseEvent arg0) {
+		
+		Connection c=null;
+
+		
+		try {
+			
+		Class.forName("com.mysql.jdbc.Driver");
+		c=(Connection)DriverManager.getConnection("jdbc:mysql://localhost:3306/codigo","root","mysql");
+			
+		} catch (Exception e) {
+			e.getMessage();
+		}
+		
+		
+		int contador=1;
+	    
+		try {
+			
+			
+			com.mysql.jdbc.PreparedStatement p=(com.mysql.jdbc.PreparedStatement) c.prepareStatement("select*from d");
+					
+			ResultSet r=p.executeQuery();
+
+			while (r.next()) {
+		
+			if(btnMapa==arg0.getSource()){	
+			
+	 
+	
+				contador+=r.getInt(1)+1;
+		
+		
+		
+}
+			}
+				
+				
+			
+			}catch (Exception e) {
+				// TODO: handle exception
+			}
+
+			try {
+				
+
+				BrowserContext context = new BrowserContext(
+			    	    new BrowserContextParams("C:\\dato"+contador));
+			    	Browser browser = new Browser(context);
+			BrowserView view = new BrowserView(browser);
+			
+			internalFrame.getContentPane().add(view, BorderLayout.CENTER);
+			internalFrame.setSize(500, 600);
+			internalFrame.setVisible(true);	
+			browser.loadURL("https://www.google.com.pe/maps?source=tldso");
+				 
+				PreparedStatement ps=c.prepareStatement("insert into d values(?)");
+				
+					ps.setInt(1,contador);
+					ps.executeUpdate();
+					
+					
+				
+			}catch(Exception e){
+				
+			}
+	
+		
+	   
+	
+
+	
+		}
+		    
+		
+		
+		
+	
+}

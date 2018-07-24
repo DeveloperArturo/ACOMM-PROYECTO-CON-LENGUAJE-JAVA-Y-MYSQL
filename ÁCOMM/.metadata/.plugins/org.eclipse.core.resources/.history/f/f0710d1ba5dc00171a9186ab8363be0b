@@ -1,0 +1,304 @@
+package Formulario;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+import java.awt.Image;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import java.awt.SystemColor;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.Color;
+import javax.swing.border.LineBorder;
+import java.awt.Font;
+import javax.swing.JTextField;
+import javax.swing.JComboBox;
+import javax.swing.JButton;
+import java.awt.Cursor;
+
+public class ventas extends JFrame {
+
+	private JPanel contentPane;
+	private JLabel lblNewLabel;
+	private JPanel panelconsumo;
+	private JPanel paneldatos;
+	private JPanel panelPrecios;
+	private JPanel panelventa;
+	private JLabel label;
+	private JLabel lblNewLabel_1;
+	private JLabel lblDatosDelConsumo;
+	private JLabel lblConsumo;
+	private JLabel lblCliente;
+	private JTextField txtConsumo;
+	private JTextField txtClientes;
+	private JLabel lblFechaDelConsumo;
+	private JLabel lblFecha;
+	private JTextField txtfecha;
+	private JLabel lblPrecioDelConsumo;
+	private JLabel lblIdbebida;
+	private JTextField txtbebida;
+	private JLabel lblIdpiqueo;
+	private JTextField txtpiqueo;
+	private JLabel lblPrecioBebida;
+	private JTextField txtpreciobebida;
+	private JLabel lblPrecio;
+	private JTextField txtpreciopiqueo;
+	private JLabel lblPagoDelConsumo;
+	private JLabel lblUsuario;
+	private JComboBox cmbusuario;
+	private JLabel lblTotal;
+	private JTextField txttotal;
+	private JLabel lblPago;
+	private JTextField txtpago;
+	private JButton btnprocesar;
+	private JButton btnimprimir;
+	private JLabel lblProcesar;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					ventas frame = new ventas();
+					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public ventas() {
+		setUndecorated(true);
+		
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 714, 651);
+		contentPane = new JPanel();
+		contentPane.setBackground(SystemColor.scrollbar);
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		label = new JLabel("");
+		
+		label.setBounds(652, 0, 62, 51);
+		ImageIcon fondo20=new ImageIcon(getClass().getResource("/img/figu.png"));
+		ImageIcon icon20=new ImageIcon(fondo20.getImage().getScaledInstance(label.getWidth(), label.getHeight(),Image.SCALE_DEFAULT));
+		
+		lblNewLabel_1 = new JLabel("Ventas");
+		lblNewLabel_1.setFont(new Font("Tahoma", Font.BOLD, 13));
+		lblNewLabel_1.setForeground(Color.WHITE);
+		lblNewLabel_1.setBounds(25, 11, 101, 33);
+		contentPane.add(lblNewLabel_1);
+		label.setIcon(icon20);
+		contentPane.add(label);
+		
+		lblNewLabel = new JLabel("");
+		lblNewLabel.setIcon(new ImageIcon(ventas.class.getResource("/img/anaran.png")));
+		lblNewLabel.setBounds(0, 0, 714, 51);
+		contentPane.add(lblNewLabel);
+		
+		panelconsumo = new JPanel();
+		panelconsumo.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		panelconsumo.setBackground(Color.WHITE);
+		panelconsumo.setBounds(10, 62, 373, 133);
+		contentPane.add(panelconsumo);
+		panelconsumo.setLayout(null);
+		
+		lblDatosDelConsumo = new JLabel("Datos del Consumo");
+		lblDatosDelConsumo.setForeground(Color.DARK_GRAY);
+		lblDatosDelConsumo.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblDatosDelConsumo.setBounds(21, 3, 143, 33);
+		panelconsumo.add(lblDatosDelConsumo);
+		
+		lblConsumo = new JLabel("Consumo");
+		lblConsumo.setForeground(Color.DARK_GRAY);
+		lblConsumo.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblConsumo.setBounds(10, 46, 67, 27);
+		panelconsumo.add(lblConsumo);
+		
+		lblCliente = new JLabel("Cliente");
+		lblCliente.setForeground(Color.DARK_GRAY);
+		lblCliente.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblCliente.setBounds(10, 95, 67, 27);
+		panelconsumo.add(lblCliente);
+		
+		txtConsumo = new JTextField();
+		txtConsumo.setEditable(false);
+		txtConsumo.setBounds(87, 47, 221, 26);
+		panelconsumo.add(txtConsumo);
+		txtConsumo.setColumns(10);
+		
+		txtClientes = new JTextField();
+		txtClientes.setEditable(false);
+		txtClientes.setColumns(10);
+		txtClientes.setBounds(87, 95, 221, 26);
+		panelconsumo.add(txtClientes);
+		
+		paneldatos = new JPanel();
+		paneldatos.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		paneldatos.setBackground(Color.WHITE);
+		paneldatos.setBounds(11, 208, 372, 133);
+		contentPane.add(paneldatos);
+		paneldatos.setLayout(null);
+		
+		lblFechaDelConsumo = new JLabel("Fecha del Consumo");
+		lblFechaDelConsumo.setForeground(Color.DARK_GRAY);
+		lblFechaDelConsumo.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblFechaDelConsumo.setBounds(22, 11, 143, 33);
+		paneldatos.add(lblFechaDelConsumo);
+		
+		lblFecha = new JLabel("Fecha");
+		lblFecha.setForeground(Color.DARK_GRAY);
+		lblFecha.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblFecha.setBounds(16, 62, 55, 27);
+		paneldatos.add(lblFecha);
+		
+		txtfecha = new JTextField();
+		txtfecha.setEditable(false);
+		txtfecha.setColumns(10);
+		txtfecha.setBounds(93, 62, 221, 26);
+		paneldatos.add(txtfecha);
+		
+		panelPrecios = new JPanel();
+		panelPrecios.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		panelPrecios.setBackground(Color.WHITE);
+		panelPrecios.setBounds(393, 62, 311, 279);
+		contentPane.add(panelPrecios);
+		panelPrecios.setLayout(null);
+		
+		lblPrecioDelConsumo = new JLabel("Precio del Consumo");
+		lblPrecioDelConsumo.setForeground(Color.DARK_GRAY);
+		lblPrecioDelConsumo.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblPrecioDelConsumo.setBounds(21, 11, 143, 33);
+		panelPrecios.add(lblPrecioDelConsumo);
+		
+		lblIdbebida = new JLabel("IDBebida");
+		lblIdbebida.setForeground(Color.DARK_GRAY);
+		lblIdbebida.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblIdbebida.setBounds(10, 55, 67, 27);
+		panelPrecios.add(lblIdbebida);
+		
+		txtbebida = new JTextField();
+		txtbebida.setEditable(false);
+		txtbebida.setColumns(10);
+		txtbebida.setBounds(87, 56, 221, 26);
+		panelPrecios.add(txtbebida);
+		
+		lblIdpiqueo = new JLabel("IDPiqueo");
+		lblIdpiqueo.setForeground(Color.DARK_GRAY);
+		lblIdpiqueo.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblIdpiqueo.setBounds(10, 141, 67, 27);
+		panelPrecios.add(lblIdpiqueo);
+		
+		txtpiqueo = new JTextField();
+		txtpiqueo.setEditable(false);
+		txtpiqueo.setColumns(10);
+		txtpiqueo.setBounds(87, 141, 221, 26);
+		panelPrecios.add(txtpiqueo);
+		
+		lblPrecioBebida = new JLabel("Precio");
+		lblPrecioBebida.setForeground(Color.DARK_GRAY);
+		lblPrecioBebida.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblPrecioBebida.setBounds(10, 93, 67, 27);
+		panelPrecios.add(lblPrecioBebida);
+		
+		txtpreciobebida = new JTextField();
+		txtpreciobebida.setEditable(false);
+		txtpreciobebida.setColumns(10);
+		txtpreciobebida.setBounds(87, 93, 221, 26);
+		panelPrecios.add(txtpreciobebida);
+		
+		lblPrecio = new JLabel("Precio");
+		lblPrecio.setForeground(Color.DARK_GRAY);
+		lblPrecio.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblPrecio.setBounds(10, 180, 67, 27);
+		panelPrecios.add(lblPrecio);
+		
+		txtpreciopiqueo = new JTextField();
+		txtpreciopiqueo.setEditable(false);
+		txtpreciopiqueo.setColumns(10);
+		txtpreciopiqueo.setBounds(87, 180, 221, 26);
+		panelPrecios.add(txtpreciopiqueo);
+		
+		panelventa = new JPanel();
+		panelventa.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		panelventa.setBackground(Color.WHITE);
+		panelventa.setBounds(10, 358, 694, 282);
+		contentPane.add(panelventa);
+		panelventa.setLayout(null);
+		
+		lblProcesar = new JLabel("Procesar");
+		lblProcesar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		lblProcesar.setForeground(Color.WHITE);
+		lblProcesar.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblProcesar.setBounds(540, 85, 121, 33);
+		panelventa.add(lblProcesar);
+		
+		lblPagoDelConsumo = new JLabel("Pago del Consumo");
+		lblPagoDelConsumo.setForeground(Color.DARK_GRAY);
+		lblPagoDelConsumo.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblPagoDelConsumo.setBounds(20, 11, 143, 33);
+		panelventa.add(lblPagoDelConsumo);
+		
+		lblUsuario = new JLabel("Usuario");
+		lblUsuario.setForeground(Color.DARK_GRAY);
+		lblUsuario.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblUsuario.setBounds(20, 54, 55, 27);
+		panelventa.add(lblUsuario);
+		
+		cmbusuario = new JComboBox();
+		cmbusuario.setBounds(85, 55, 319, 33);
+		panelventa.add(cmbusuario);
+		
+		lblTotal = new JLabel("Total");
+		lblTotal.setForeground(Color.DARK_GRAY);
+		lblTotal.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblTotal.setBounds(20, 106, 55, 27);
+		panelventa.add(lblTotal);
+		
+		txttotal = new JTextField();
+		txttotal.setEditable(false);
+		txttotal.setColumns(10);
+		txttotal.setBounds(85, 109, 319, 26);
+		panelventa.add(txttotal);
+		
+		lblPago = new JLabel("Pago");
+		lblPago.setForeground(Color.DARK_GRAY);
+		lblPago.setFont(new Font("Tahoma", Font.BOLD, 11));
+		lblPago.setBounds(20, 184, 55, 27);
+		panelventa.add(lblPago);
+		
+		txtpago = new JTextField();
+		txtpago.setColumns(10);
+		txtpago.setBounds(85, 165, 121, 65);
+		panelventa.add(txtpago);
+		
+		btnprocesar = new JButton("");
+		btnprocesar.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnprocesar.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		btnprocesar.setBounds(476, 68, 208, 65);
+		ImageIcon fondo21=new ImageIcon(getClass().getResource("/img/azulz.png"));
+		ImageIcon icon21=new ImageIcon(fondo21.getImage().getScaledInstance(btnprocesar.getWidth(),btnprocesar.getHeight(),Image.SCALE_DEFAULT));
+		btnprocesar.setIcon(icon21);
+		panelventa.add(btnprocesar);
+		
+		btnimprimir = new JButton("");
+		btnimprimir.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+		btnimprimir.setBorder(new LineBorder(new Color(0, 0, 0), 0));
+		
+		btnimprimir.setBounds(476, 172, 208, 58);
+		ImageIcon fondo22=new ImageIcon(getClass().getResource("/img/imprimir2.png"));
+		ImageIcon icon22=new ImageIcon(fondo22.getImage().getScaledInstance(btnimprimir.getWidth(),btnimprimir.getHeight(),Image.SCALE_DEFAULT));
+		btnimprimir.setIcon(icon22);
+		panelventa.add(btnimprimir);
+	}
+}

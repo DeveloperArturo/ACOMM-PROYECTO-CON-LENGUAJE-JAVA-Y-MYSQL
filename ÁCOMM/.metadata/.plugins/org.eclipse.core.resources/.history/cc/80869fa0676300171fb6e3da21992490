@@ -1,0 +1,79 @@
+package Adicionales;
+
+import java.awt.BorderLayout;
+import java.awt.EventQueue;
+
+import javax.swing.JFrame;
+import javax.swing.JPanel;
+import javax.swing.border.EmptyBorder;
+import javax.swing.JTextField;
+import javax.swing.border.LineBorder;
+import java.awt.Color;
+import javax.swing.JLabel;
+import javax.swing.ImageIcon;
+import java.awt.Font;
+import java.awt.Image;
+import java.awt.Cursor;
+import javax.swing.DropMode;
+import javax.swing.JFormattedTextField;
+
+public class iniciarSesion extends JFrame {
+
+	private JPanel contentPane;
+	private JLabel lbiniciarsecion;
+	private JTextField txtusuario;
+	private JFormattedTextField password;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					iniciarSesion frame = new iniciarSesion();
+					frame.setVisible(true);
+					frame.setLocationRelativeTo(null);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public iniciarSesion() {
+		setUndecorated(true);
+		 this.setBackground(new Color(0,0,0,0));
+		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+		setBounds(100, 100, 511, 708);
+		contentPane = new JPanel();
+		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
+		contentPane.setBackground(new Color(0,0,0,0));
+		setContentPane(contentPane);
+		contentPane.setLayout(null);
+		
+		password = new JFormattedTextField();
+		password.setForeground(Color.DARK_GRAY);
+		password.setBorder(new LineBorder(new Color(171, 173, 179), 0));
+		password.setBounds(129, 448, 276, 32);
+		contentPane.add(password);
+		
+		txtusuario = new JTextField();
+		txtusuario.setForeground(Color.DARK_GRAY);
+		txtusuario.setBorder(new LineBorder(new Color(171, 173, 179), 0));
+		txtusuario.setBounds(129, 332, 276, 32);
+		contentPane.add(txtusuario);
+		txtusuario.setColumns(10);
+		
+		lbiniciarsecion = new JLabel("");
+		lbiniciarsecion.setBounds(0, 0, 495, 670);
+		contentPane.add(lbiniciarsecion);
+		ImageIcon fondo2=new ImageIcon(getClass().getResource("/img/iniciar Sesionn.png"));
+		ImageIcon icon2=new ImageIcon(fondo2.getImage().getScaledInstance(lbiniciarsecion.getWidth(),lbiniciarsecion .getHeight(),Image.SCALE_DEFAULT));
+		lbiniciarsecion.setIcon(icon2);
+		
+	}
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry kind="src" path="src"/>
+	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
+	<classpathentry kind="lib" path="jgoodies-common-1.8.0.jar" sourcepath="jgoodies-common-1.8.0-sources.jar"/>
+	<classpathentry kind="lib" path="jgoodies-forms-1.8.0.jar" sourcepath="jgoodies-forms-1.8.0-sources.jar"/>
+	<classpathentry kind="lib" path="miglayout15-swing.jar" sourcepath="miglayout-src.zip"/>
+	<classpathentry kind="lib" path="src/libreria/jcalendar-1.4.jar"/>
+	<classpathentry kind="lib" path="src/libreria/AbsoluteLayout.jar"/>
+	<classpathentry kind="lib" path="src/libreria/jl1.0.jar"/>
+	<classpathentry kind="lib" path="src/mysql-connector-java-5.1.6-bin.jar"/>
+	<classpathentry kind="lib" path="src/libreria/jxbrowser-6.17.jar"/>
+	<classpathentry kind="lib" path="src/libreria/jxbrowser-linux64-6.17.jar"/>
+	<classpathentry kind="lib" path="src/libreria/jxbrowser-mac-6.17.jar"/>
+	<classpathentry kind="lib" path="src/libreria/jxbrowser-win32-6.17.jar"/>
+	<classpathentry kind="lib" path="src/libreria/jxbrowserdemo.jar"/>
+	<classpathentry kind="lib" path="src/prueba/jcommon-1.0.23.jar"/>
+	<classpathentry kind="lib" path="src/prueba/jfreechart-1.0.19.jar"/>
+	<classpathentry kind="lib" path="src/prueba/poi-3.17.jar"/>
+	<classpathentry kind="lib" path="src/prueba/poi-examples-3.17.jar"/>
+	<classpathentry kind="lib" path="src/prueba/poi-excelant-3.17.jar"/>
+	<classpathentry kind="lib" path="src/prueba/poi-ooxml-3.17.jar"/>
+	<classpathentry kind="lib" path="src/prueba/poi-ooxml-schemas-3.17.jar"/>
+	<classpathentry kind="lib" path="src/prueba/poi-scratchpad-3.17.jar"/>
+	<classpathentry kind="lib" path="src/prueba/commons-codec-1.10.jar"/>
+	<classpathentry kind="lib" path="src/prueba/commons-collections4-4.1.jar"/>
+	<classpathentry kind="lib" path="src/prueba/commons-logging-1.2.jar"/>
+	<classpathentry kind="lib" path="src/prueba/junit-4.12.jar"/>
+	<classpathentry kind="lib" path="src/prueba/log4j-1.2.17.jar"/>
+	<classpathentry kind="lib" path="src/prueba/curvesapi-1.04.jar"/>
+	<classpathentry kind="lib" path="src/prueba/xmlbeans-2.6.0.jar"/>
+	<classpathentry kind="lib" path="src/prueba/mail.jar"/>
+	<classpathentry kind="output" path="bin"/>
+</classpath>

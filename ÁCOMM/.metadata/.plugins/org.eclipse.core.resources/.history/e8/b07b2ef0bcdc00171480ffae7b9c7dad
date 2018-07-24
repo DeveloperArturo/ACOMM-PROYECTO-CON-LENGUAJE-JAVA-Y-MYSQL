@@ -1,0 +1,118 @@
+package mapas;
+
+import java.awt.BorderLayout;
+
+import java.awt.Color;
+import java.awt.EventQueue;
+
+import javax.swing.JInternalFrame;
+import javax.swing.JPanel;
+
+import com.mysql.jdbc.Connection;
+import com.teamdev.jxbrowser.chromium.Browser;
+import com.teamdev.jxbrowser.chromium.BrowserContext;
+import com.teamdev.jxbrowser.chromium.BrowserContextParams;
+import com.teamdev.jxbrowser.chromium.swing.BrowserView;
+
+
+import javax.swing.JFrame;
+import javax.swing.JButton;
+import java.awt.event.ActionListener;
+import java.awt.event.ActionEvent;
+import javax.swing.border.LineBorder;
+import java.awt.event.MouseListener;
+import java.sql.DriverManager;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.awt.event.MouseEvent;
+import java.awt.SystemColor;
+
+public class google extends JFrame implements ActionListener, MouseListener {
+	private JInternalFrame internalFrame;
+
+	/**
+	 * Launch the application.
+	 */
+	public static void main(String[] args) {
+		EventQueue.invokeLater(new Runnable() {
+			public void run() {
+				try {
+					google frame = new google();
+					frame.setVisible(true);
+				} catch (Exception e) {
+					e.printStackTrace();
+				}
+			}
+		});
+	}
+
+	/**
+	 * Create the frame.
+	 */
+	public google() {
+		getContentPane().setBackground(SystemColor.controlHighlight);
+		getContentPane().setForeground(Color.RED);
+		setBounds(100, 100, 874, 583);
+		getContentPane().setLayout(null);
+		
+		internalFrame = new JInternalFrame("New JInternalFrame");
+		internalFrame.setBounds(357, 11, 518, 600);
+		getContentPane().add(internalFrame);
+		internalFrame.setVisible(true);
+		google();
+
+	}
+	public void actionPerformed(ActionEvent arg0) {
+	}
+	public void mouseClicked(MouseEvent arg0) {
+	}
+	public void mouseEntered(MouseEvent arg0) {
+	}
+	public void mouseExited(MouseEvent arg0) {
+	}
+	public void mousePressed(MouseEvent arg0) {
+	}
+	public void mouseReleased(MouseEvent arg0) {
+	}
+	
+	private void google(){
+
+
+		try {
+			
+
+			BrowserContext context = new BrowserContext(
+		    	    new BrowserContextParams("C:\\dato"+1));
+		    	Browser browser = new Browser(context);
+		BrowserView view = new BrowserView(browser);
+		
+		internalFrame.getContentPane().add(view, BorderLayout.CENTER);
+		internalFrame.setSize(500, 600);
+		internalFrame.setVisible(true);	
+		browser.loadURL("https://www.google.com.pe/maps?source=tldso");
+			 
+				
+			
+		}catch(Exception e){
+			
+		}
+
+	
+   
+
+
+	}
+	
+	
+	
+
+	
+	
+	
+}
+		    
+		
+		
+		
+	
+
